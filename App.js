@@ -475,7 +475,9 @@ function App2() {
 
 const Login=()=>{
   return(
-    <View></View>
+    <View>
+      <Text>로그인 창입니다.</Text>
+    </View>
   )
 }
 
