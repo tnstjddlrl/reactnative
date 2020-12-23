@@ -225,22 +225,30 @@ const FootTer = () => {
   return (
     <View style={{flex:1}}>
         <View style={{borderWidth:1,position:'absolute',bottom:0,flexDirection: 'row',}}>
+        <TouchableOpacity>
         <View style={{backgroundColor:'white'}}>
           <ImageBackground source={ffimg} style={{width:65,height:65,marginLeft:20}}>
           </ImageBackground>
         </View>
+        </TouchableOpacity>
+        <TouchableOpacity>
         <View style={{backgroundColor:'white'}}>
           <ImageBackground source={ffimg2} style={{width:65,height:65,marginLeft:20,marginRight:10}}>
           </ImageBackground>
         </View>
+        </TouchableOpacity>
+        <TouchableOpacity>
         <View style={{backgroundColor:'white'}}>
           <ImageBackground source={ffimg3} style={{width:65,height:65,marginLeft:20,marginRight:10}}>
           </ImageBackground>
         </View>
+        </TouchableOpacity>
+        <TouchableOpacity>
         <View style={{backgroundColor:'white'}}>
           <ImageBackground source={ffimg4} style={{width:65,height:65,marginLeft:20,marginRight:40}}>
           </ImageBackground>
         </View>
+        </TouchableOpacity>
 
         </View>
       </View>
