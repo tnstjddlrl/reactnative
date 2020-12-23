@@ -134,7 +134,7 @@ button:{
 
 })
 
-const App =() =>{
+const App =({ navigation }) =>{
   const logo = { uri: "https://pluslink.kr/img/pluslink/logo.png" };
   const logo2 = { uri: "https://pluslink.kr/img/menu.png" };
   return(
@@ -151,7 +151,32 @@ const App =() =>{
         </ScrollView>
       </View>
 
-      <HeadHeder></HeadHeder>
+      <View style={{flex:1}}>
+        <View style={{borderWidth:1,position:'absolute',width:chartWidth+15,left:-2,bottom:680,height:60,flexDirection: 'row',backgroundColor:'white'}}>
+            <TouchableOpacity activeOpacity={0.5} onPress={() => navigation.openDrawer()} style={{top:10,left:10}}>
+                <Image
+                source={logo2}
+                style={{width:40,height:35}}
+                />
+            </TouchableOpacity>
+            <View style={{left:chartWidth/3,height:30,width:40}}>
+              <Image source={testlogo} style={{width:40,height:34,marginTop:10,}}>
+              </Image>
+            </View>
+            <View style={{left:chartWidth/1.8,top:10,width:75,height:35,backgroundColor:'#b84dff',
+                  borderTopLeftRadius: 17,
+                  borderTopRightRadius: 17,
+                  borderBottomLeftRadius:17,
+                  borderBottomRightRadius:17,}}>
+              <Text style={{width:65,height:70,marginLeft:10,marginTop:8,color:'white', fontWeight:'bold'}}>
+                PnL Mail
+              </Text>
+            </View>
+          
+        </View>
+      </View>
+      
+
         <FootTer></FootTer>
 
         
@@ -442,7 +467,7 @@ function App2() {
         <Drawer.Screen
           name="로그인"
           options={{ drawerLabel: 'First page Option' }}
-          component={FirstPage} />
+          component={App} />
         <Drawer.Screen
           name="회원가입"
           options={{ drawerLabel: 'Second page Option' }}
@@ -452,4 +477,4 @@ function App2() {
   );
 }
 
-export default App;
+export default App2;
