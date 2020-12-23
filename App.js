@@ -11,10 +11,19 @@ import {
   AppRegistry,
   Dimensions,
   Image,
+  TouchableOpacity,
+  Button
 } from "react-native";
 
 import Swiper from 'react-native-swiper'
+import 'react-native-gesture-handler';
 
+import { NavigationContainer } from '@react-navigation/native';
+import { createStackNavigator } from '@react-navigation/stack';
+import { createDrawerNavigator } from '@react-navigation/drawer';
+
+const Stack = createStackNavigator();
+const Drawer = createDrawerNavigator();
 
 const chartHeight = Dimensions.get('window').height;
 const chartWidth = Dimensions.get('window').width;
@@ -333,7 +342,7 @@ const Eimg3 =require('./e_banner03.jpg')
 const EEvent =() =>{
   return (
     <View style={styles.cardview}>
-      <Text style={styles.etitle}>이벤트 테스트</Text>
+      <Text style={styles.etitle}>이벤트</Text>
       <Text style={styles.etitle2}>진행중인 이벤트를 확인해보세요!</Text>
       <ScrollView
                 pagingEnabled={true}
@@ -408,6 +417,39 @@ const ReviewText=(prop)=>{
       <Text numberOfLines={4} ellipsizeMode='tail' style={{top:60,margin:5,height:70,textAlign:'center',fontSize:12}}>리뷰내용입니다.리뷰내용입니다.리뷰내용입니다.리뷰내용입니다.리뷰내용입니다.리뷰내용입니다.리뷰내용입니다.리뷰내용입니다.리뷰내용입니다.</Text>
     </View>
   )
+}
+
+
+/////////////////////////-------------------------------------------------------------------
+
+const FirstPage = ({ navigation }) => {
+  return (
+        <View>
+          <Button onPress={() => navigation.openDrawer()} title="메뉴"/>
+          
+        </View>
+        
+  );
+}
+function App2() {
+  return (
+    <NavigationContainer>
+      <Drawer.Navigator
+        drawerContentOptions={{
+          activeTintColor: '#e91e63',
+          itemStyle: { marginVertical: 5 },
+        }}>
+        <Drawer.Screen
+          name="로그인"
+          options={{ drawerLabel: 'First page Option' }}
+          component={FirstPage} />
+        <Drawer.Screen
+          name="회원가입"
+          options={{ drawerLabel: 'Second page Option' }}
+          component={EEvent} />
+      </Drawer.Navigator>
+    </NavigationContainer>
+  );
 }
 
 export default App;
