@@ -333,7 +333,7 @@ const Eimg3 =require('./e_banner03.jpg')
 const EEvent =() =>{
   return (
     <View style={styles.cardview}>
-      <Text style={styles.etitle}>이벤트</Text>
+      <Text style={styles.etitle}>이벤트 테스트</Text>
       <Text style={styles.etitle2}>진행중인 이벤트를 확인해보세요!</Text>
       <ScrollView
                 pagingEnabled={true}
