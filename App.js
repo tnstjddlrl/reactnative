@@ -172,7 +172,6 @@ const App =({ navigation }) =>{
                 PnL Mail
               </Text>
             </View>
-          
         </View>
       </View>
       
@@ -445,17 +444,7 @@ const ReviewText=(prop)=>{
 }
 
 
-/////////////////////////-------------------------------------------------------------------
-
-const FirstPage = ({ navigation }) => {
-  return (
-        <View>
-          <Button onPress={() => navigation.openDrawer()} title="메뉴"/>
-          
-        </View>
-        
-  );
-}
+//---------------------------------네비바를 위한 도구들---------------------------
 function App2() {
   return (
     <NavigationContainer>
@@ -465,16 +454,47 @@ function App2() {
           itemStyle: { marginVertical: 5 },
         }}>
         <Drawer.Screen
-          name="로그인"
-          options={{ drawerLabel: 'First page Option' }}
+          name="홈"
+          options={{ drawerLabel: '메인' }}
           component={App} />
         <Drawer.Screen
+          name="로그인"
+          options={{ drawerLabel: '로그인' }}
+          component={Login} />
+        <Drawer.Screen
           name="회원가입"
-          options={{ drawerLabel: 'Second page Option' }}
-          component={EEvent} />
+          options={{ drawerLabel: '회원가입' }}
+          component={Register} />
       </Drawer.Navigator>
     </NavigationContainer>
   );
 }
+//----------------------------------------------------------
+
+//================================로그인===============================
+
+const Login=()=>{
+  return(
+    <View></View>
+  )
+}
+
+
+
+
+//=====================================================================
+//================================회원가입===============================
+
+const Register=()=>{
+  return(
+    <View></View>
+  )
+}
+
+
+
+
+//=====================================================================
+
 
 export default App2;
