@@ -819,7 +819,10 @@ const Register=({navigation})=>{
 //=========================업체 자세히보기=============================
 const ComLook=({navigation})=>{
   return(
-    <View></View>
+    <View>
+      <Text>업체 자세히보기입니당.</Text>
+
+    </View>
   )
 }
 
