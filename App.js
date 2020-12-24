@@ -176,7 +176,35 @@ const App =({ navigation }) =>{
       </View>
       
 
-        <FootTer></FootTer>
+      <View style={{flex:1}}>
+        <View style={{borderWidth:1,position:'absolute',bottom:0,flexDirection: 'row',}}>
+        <TouchableOpacity onPress={() => navigation.navigate('홈')}>
+        <View style={{backgroundColor:'white'}}>
+          <ImageBackground source={ffimg} style={{width:65,height:65,marginLeft:20}}>
+          </ImageBackground>
+        </View>
+        </TouchableOpacity>
+        <TouchableOpacity>
+        <View style={{backgroundColor:'white'}}>
+          <ImageBackground source={ffimg2} style={{width:65,height:65,marginLeft:20,marginRight:10}}>
+          </ImageBackground>
+        </View>
+        </TouchableOpacity>
+        <TouchableOpacity>
+        <View style={{backgroundColor:'white'}}>
+          <ImageBackground source={ffimg3} style={{width:65,height:65,marginLeft:20,marginRight:10}}>
+          </ImageBackground>
+        </View>
+        </TouchableOpacity>
+        <TouchableOpacity>
+        <View style={{backgroundColor:'white'}}>
+          <ImageBackground source={ffimg4} style={{width:65,height:65,marginLeft:20,marginRight:40}}>
+          </ImageBackground>
+        </View>
+        </TouchableOpacity>
+
+        </View>
+      </View>
 
         
     </View>
@@ -221,11 +249,11 @@ const ffimg =require('./b01.png')
 const ffimg2 =require('./b02.png')
 const ffimg3 =require('./b03.png')
 const ffimg4 =require('./b04.png')
-const FootTer = () => {
+const FootTer = ({ navigation }) => {
   return (
     <View style={{flex:1}}>
         <View style={{borderWidth:1,position:'absolute',bottom:0,flexDirection: 'row',}}>
-        <TouchableOpacity>
+        <TouchableOpacity onPress={() => navigation.openDrawer()}>
         <View style={{backgroundColor:'white'}}>
           <ImageBackground source={ffimg} style={{width:65,height:65,marginLeft:20}}>
           </ImageBackground>
@@ -473,6 +501,10 @@ function App2() {
           name="회원가입"
           options={{ drawerLabel: '회원가입' }}
           component={Register} />
+        <Drawer.Screen
+          name="footer테스트용"
+          options={{ drawerLabel: 'footer테스트용' }}
+          component={FootTer} />
       </Drawer.Navigator>
     </NavigationContainer>
   );
@@ -518,7 +550,35 @@ const Login=({navigation})=>{
         </View>
       </View>
 
-      <FootTer></FootTer>
+      <View style={{flex:1}}>
+        <View style={{borderWidth:1,position:'absolute',bottom:0,flexDirection: 'row',}}>
+        <TouchableOpacity onPress={() => navigation.navigate('홈')}>
+        <View style={{backgroundColor:'white'}}>
+          <ImageBackground source={ffimg} style={{width:65,height:65,marginLeft:20}}>
+          </ImageBackground>
+        </View>
+        </TouchableOpacity>
+        <TouchableOpacity>
+        <View style={{backgroundColor:'white'}}>
+          <ImageBackground source={ffimg2} style={{width:65,height:65,marginLeft:20,marginRight:10}}>
+          </ImageBackground>
+        </View>
+        </TouchableOpacity>
+        <TouchableOpacity>
+        <View style={{backgroundColor:'white'}}>
+          <ImageBackground source={ffimg3} style={{width:65,height:65,marginLeft:20,marginRight:10}}>
+          </ImageBackground>
+        </View>
+        </TouchableOpacity>
+        <TouchableOpacity>
+        <View style={{backgroundColor:'white'}}>
+          <ImageBackground source={ffimg4} style={{width:65,height:65,marginLeft:20,marginRight:40}}>
+          </ImageBackground>
+        </View>
+        </TouchableOpacity>
+
+        </View>
+      </View>
 
     </View>
   )
