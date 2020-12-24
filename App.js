@@ -721,7 +721,6 @@ const Register=({navigation})=>{
           <View style={{position:'absolute',backgroundColor:'white',borderWidth: 1,borderColor:"#a6a6a6",margin:20 , width:350,height:120, top:920}}>
           <View style={{position:'absolute',top:10,left:15,width:320,height:70}}>
           <Text>대표이미지</Text>
-
           </View>
 
           </View>
@@ -800,6 +799,13 @@ const Register=({navigation})=>{
 }
 
 
+//=====================================================================
+//=========================업체 자세히보기=============================
+const ComLook=()=>{
+  return(
+    
+  )
+}
 
 
 //=====================================================================
