@@ -22,6 +22,7 @@ import 'react-native-gesture-handler';
 import { NavigationContainer } from '@react-navigation/native';
 import { createStackNavigator } from '@react-navigation/stack';
 import { createDrawerNavigator } from '@react-navigation/drawer';
+import CheckBox from '@react-native-community/checkbox';
 
 const Stack = createStackNavigator();
 const Drawer = createDrawerNavigator();
@@ -520,10 +521,11 @@ function App2() {
 
 const Login=({navigation})=>{
   const [value, onChangeText] = React.useState('');//textinput용
+  const [toggleCheckBox, setToggleCheckBox] = useState(false)//체크박스용
   return(
     <View style={{height:chartHeight-20}}>
       
-      <View style={{position:'absolute',backgroundColor:'blue',margin:20 , width:350,height:500, top:100}}>
+      <View style={{position:'absolute',backgroundColor:'#ffcccc',margin:20 , width:350,height:500, top:100}}>
         <Text style={{color: '#fff',fontSize: 30,fontWeight: 'bold',position:'absolute', top:40,left:15}}>로그인</Text>
         <TextInput
           style={{position:'absolute', height: 40,width:315,marginLeft:15 ,top:120,  borderColor: 'gray', borderWidth: 1 }}
@@ -537,7 +539,23 @@ const Login=({navigation})=>{
           value={value}
           placeholder='비밀번호'
         />
+
+        <View style={{flex:1,flexDirection:'row',position:'absolute',top:230,left:10}}>
+        <CheckBox
+          disabled={false}
+          value={toggleCheckBox}
+          onValueChange={(newValue) => setToggleCheckBox(newValue)}
+        />
+        <Text style={{textAlignVertical:'center'}}>자동로그인</Text>
+        <Text style={{textAlign:'right',textAlignVertical:'center',marginLeft:90}}>아이디/비밀번호 찾기</Text>
+        
+        </View>
+        <View style={{position:'absolute', top:270,left:15,width:315}}>
+        <Button title={'로그인'} color="#d24dff"></Button>
+        </View>
+
         <View>
+          
         </View>
 
       </View>
