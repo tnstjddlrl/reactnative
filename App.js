@@ -253,11 +253,11 @@ const ffimg =require('./b01.png')
 const ffimg2 =require('./b02.png')
 const ffimg3 =require('./b03.png')
 const ffimg4 =require('./b04.png')
-const FootTer = ({ navigation }) => {
+const FootTer = () => {
   return (
     <View style={{flex:1}}>
         <View style={{borderWidth:1,position:'absolute',bottom:0,flexDirection: 'row',}}>
-        <TouchableOpacity onPress={() => navigation.openDrawer()}>
+        <TouchableOpacity>
         <View style={{backgroundColor:'white'}}>
           <ImageBackground source={ffimg} style={{width:65,height:65,marginLeft:20}}>
           </ImageBackground>
@@ -505,10 +505,6 @@ function App2() {
           name="회원가입"
           options={{ drawerLabel: '회원가입' }}
           component={Register} />
-        <Drawer.Screen
-          name="footer테스트용"
-          options={{ drawerLabel: 'footer테스트용' }}
-          component={FootTer} />
       </Drawer.Navigator>
     </NavigationContainer>
   );
