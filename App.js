@@ -634,7 +634,8 @@ const Login=({navigation})=>{
 const Register=()=>{
   return(
     <View>
-
+      <View>
+      </View>
 
 
 
