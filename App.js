@@ -633,11 +633,12 @@ const Login=({navigation})=>{
 
 const Register=({navigation})=>{
   const [value, onChangeText] = React.useState('');//textinput용
+  
   return(
     <View>
       <View>
         <ScrollView style={{marginTop:56}}>
-          <View style={{height:chartHeight}}>
+          <View style={{height:chartHeight*1.7}}>
           <View style={{width:chartWidth,height:150}}>
             <ImageBackground source={image} style={{flex: 1,resizeMode: "cover",justifyContent: "center"}}>
             <Text style={{position:'absolute',textAlignVertical:'center',top:30,left:15,color:'white',fontSize:20,fontWeight:'bold'}}>회원가입</Text>
@@ -692,8 +693,40 @@ const Register=({navigation})=>{
          </View>
 
 
+         <View style={{position:'absolute',backgroundColor:'#d9d9d9',borderWidth: 1,borderColor:"#a6a6a6",margin:20 , width:350,height:200, top:640}}>
+          <Text style={{position:'absolute',textAlignVertical:'center',top:10,left:15,color:'black',fontSize:15,}}>본인확인</Text>
+          </View>
+          <View style={{position:'absolute',backgroundColor:'white',borderWidth: 1,borderColor:"#a6a6a6",margin:20 , width:350,height:160, top:680}}>
+          <View style={{position:'absolute',top:10,left:15,width:320,height:70}}>
+          <Text>이름</Text>
+          <TextInput
+          style={{position:'absolute', height: 30,width:315,top:25, borderColor: 'gray', borderWidth: 1 }}
+          onChangeText={text => onChangeText(text)}
+          value={value}
+         /></View>
+
+         <View style={{position:'absolute',top:80,left:15,width:320,height:70}}>
+          <Text>휴대폰번호</Text>
+          <TextInput
+          style={{position:'absolute', height: 30,width:315,top:25, borderColor: 'gray', borderWidth: 1 }}
+          onChangeText={text => onChangeText(text)}
+          value={value}
+         />
+         </View>
+          </View>
+        
+          <View style={{position:'absolute',backgroundColor:'#d9d9d9',borderWidth: 1,borderColor:"#a6a6a6",margin:20 , width:350,height:100, top:880}}>
+          <Text style={{position:'absolute',textAlignVertical:'center',top:10,left:15,color:'black',fontSize:15,}}>이미지등록</Text>
+          </View>
+          <View style={{position:'absolute',backgroundColor:'white',borderWidth: 1,borderColor:"#a6a6a6",margin:20 , width:350,height:120, top:920}}>
+          <View style={{position:'absolute',top:10,left:15,width:320,height:70}}>
+          <Text>대표이미지</Text>
 
           </View>
+
+          </View>
+          </View>
+          
         </ScrollView>
       </View>
 
