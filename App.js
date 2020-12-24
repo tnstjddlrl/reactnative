@@ -554,9 +554,11 @@ const Login=({navigation})=>{
         <View style={{position:'absolute', top:270,left:15,width:315}}>
         <Button title={'로그인'} color="#d24dff"></Button>
         </View>
-
-        <View>
-
+        <View style={{position:'absolute',borderWidth:1,borderColor:"#d9d9d9",width:350,top:440}}></View>
+        <View style={{position:'absolute',left:15,flex:1,flexDirection:'row',top:455,height:30}}>
+          <Text style={{textAlignVertical:'center',marginRight:10}}>처음이신가요??</Text>
+          
+          <Button title={'회원가입'} color={'#404040'}></Button>
         </View>
 
       </View>
