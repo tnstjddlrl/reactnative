@@ -726,6 +726,10 @@ const Register=({navigation})=>{
 
           </View>
           </View>
+          <View style={{position:'absolute', top:1100,left:chartWidth/2.7,width:315,flex:1,flexDirection:'row'}}>
+          <Button title={'회원가입'} color="#d24dff"></Button>
+          <Button title={'취소'} color={'#404040'}></Button>
+          </View>
           
         </ScrollView>
       </View>
