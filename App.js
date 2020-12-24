@@ -159,10 +159,12 @@ const App =({ navigation }) =>{
                 style={{width:40,height:35}}
                 />
             </TouchableOpacity>
+            <TouchableOpacity onPress={() => navigation.navigate('홈')}>
             <View style={{left:chartWidth/3,height:30,width:40}}>
               <Image source={testlogo} style={{width:40,height:34,marginTop:10,}}>
               </Image>
             </View>
+            </TouchableOpacity>
             <View style={{left:chartWidth/1.8,top:10,width:75,height:35,backgroundColor:'#b84dff',
                   borderTopLeftRadius: 17,
                   borderTopRightRadius: 17,
@@ -535,9 +537,12 @@ const Login=({navigation})=>{
                 />
             </TouchableOpacity>
             <View style={{left:chartWidth/3,height:30,width:40}}>
+            <TouchableOpacity onPress={() => navigation.navigate('홈')}>
               <Image source={testlogo} style={{width:40,height:34,marginTop:10,}}>
               </Image>
+            </TouchableOpacity>
             </View>
+            
             <View style={{left:chartWidth/1.8,top:10,width:75,height:35,backgroundColor:'#b84dff',
                   borderTopLeftRadius: 17,
                   borderTopRightRadius: 17,
