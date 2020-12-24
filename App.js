@@ -12,7 +12,8 @@ import {
   Dimensions,
   Image,
   TouchableOpacity,
-  Button
+  Button,
+  TextInput,
 } from "react-native";
 
 import Swiper from 'react-native-swiper'
@@ -518,10 +519,28 @@ function App2() {
 //================================로그인===============================
 
 const Login=({navigation})=>{
+  const [value, onChangeText] = React.useState('');//textinput용
   return(
     <View style={{height:chartHeight-20}}>
       
+      <View style={{position:'absolute',backgroundColor:'blue',margin:20 , width:350,height:500, top:100}}>
+        <Text style={{color: '#fff',fontSize: 30,fontWeight: 'bold',position:'absolute', top:40,left:15}}>로그인</Text>
+        <TextInput
+          style={{position:'absolute', height: 40,width:315,marginLeft:15 ,top:120,  borderColor: 'gray', borderWidth: 1 }}
+          onChangeText={text => onChangeText(text)}
+          value={value}
+          placeholder='아이디'
+        />
+        <TextInput
+          style={{position:'absolute', height: 40,width:315,marginLeft:15 ,top:180,  borderColor: 'gray', borderWidth: 1 }}
+          onChangeText={text => onChangeText(text)}
+          value={value}
+          placeholder='비밀번호'
+        />
+        <View>
+        </View>
 
+      </View>
 
 
 
