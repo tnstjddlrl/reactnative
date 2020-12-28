@@ -534,9 +534,12 @@ function App2() {
 //로그인 연동 해야함...
 //================================로그인===============================
 
+
+
 const Login=({navigation})=>{
   const [value, onChangeText] = React.useState('');//textinput용
   const [toggleCheckBox, setToggleCheckBox] = useState(false)//체크박스용
+
   return(
     <View style={{height:chartHeight-20}}>
       
