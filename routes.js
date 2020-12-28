@@ -12,12 +12,12 @@ const connection = mysql.createPool({
 const app = express();
 
 // Creating a GET route that returns data from the 'users' table.
-app.get('/g5_member', function (req, res) {
+app.get('/expertise', function (req, res) {
     // Connecting to the database.
     connection.getConnection(function (err, connection) {
 
     // Executing the MySQL query (select all data from the 'users' table).
-    connection.query('SELECT * FROM g5_member', function (error, results, fields) {
+    connection.query('SELECT * FROM expertise', function (error, results, fields) {
       // If some error occurs, we throw an error.
       if (error) throw error;
 
