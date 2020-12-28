@@ -820,7 +820,7 @@ const Register=({navigation})=>{
 const ComLook=({navigation})=>{
   return(
     <View>
-      <Text>업체 자세히보기입니당.</Text>
+      <Text>업체 자세히보기입니당. 여기는 어도비로 작업해보기</Text>
 
     </View>
   )
