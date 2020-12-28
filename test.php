@@ -1,5 +1,5 @@
 <?php
-  $host     : 'http://ip0131.cafe24.com/';
+  $host : 'http://ip0131.cafe24.com/';
   $user = 'ip0131';
     $pw = 'ip0131132';
     $dbName = 'ip0131';
