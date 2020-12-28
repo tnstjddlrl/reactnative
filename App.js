@@ -23,6 +23,8 @@ import { NavigationContainer } from '@react-navigation/native';
 import { createStackNavigator } from '@react-navigation/stack';
 import { createDrawerNavigator } from '@react-navigation/drawer';
 import CheckBox from '@react-native-community/checkbox';
+import TestCom from './Component0.js';
+
 
 const Stack = createStackNavigator();
 const Drawer = createDrawerNavigator();
@@ -819,12 +821,13 @@ const Register=({navigation})=>{
 //=========================업체 자세히보기=============================
 const ComLook=({navigation})=>{
   return(
-    <View>
-      <Text>업체 자세히보기입니당. 여기는 어도비로 작업해보기</Text>
+    <View style={{margin:10}}>
+      <TestCom></TestCom>
 
     </View>
   )
 }
+
 
 
 //=====================================================================
