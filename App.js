@@ -840,7 +840,10 @@ const ComLook=({navigation})=>{
 //============================화면넘기기테스트===========================
 const NavTest = () =>{
   return(
-    <View></View>
+    <View>
+      <Text>안녕</Text>
+
+    </View>
   )
 }
 
