@@ -144,43 +144,14 @@ const App =({ navigation }) =>{
   const logo2 = { uri: "https://pluslink.kr/img/menu.png" };
   return(
     <View>
-
-      {/* <Drawer.Navigator
-        drawerContentOptions={{
-          activeTintColor: '#e91e63',
-          itemStyle: { marginVertical: 5 },
-        }}>
-        <Drawer.Screen
-          name="홈"
-          options={{ drawerLabel: '메인' }}
-          component={App} />
-        <Drawer.Screen
-          name="로그인"
-          options={{ drawerLabel: '로그인' }}
-          component={Login} />
-        <Drawer.Screen
-          name="회원가입"
-          options={{ drawerLabel: '회원가입' }}
-          component={Register} />
-        <Drawer.Screen
-          name="회사자세히보기"
-          options={{ drawerLabel: '회사보기테스트' }}
-          component={ComLook} />
-        <Drawer.Screen
-          name="회사테스트"
-          options={{ drawerLabel: '회사테스트' }}
-          component={Company} />  
-      </Drawer.Navigator> */}
-
-      <HeadHeder></HeadHeder>
       <View>
       <ScrollView showsVerticalScrollIndicator={false}>
         <Banner></Banner>
         <Mmenu></Mmenu>
-        <TouchableOpacity onPress={()=>navigation.navigate('회사자세히보기')}>
+        <TouchableOpacity onPress={()=>navigation.navigate('회사자세히보기',{name:'김업체'})}>
         <Company img={comImg} star='3.1' color='red' text='주방 수도, 인테리어 전문 업체입니다. 원하시는 디자인으로 깔끔하게 시공해드립니다.' addr='부산 남구'></Company>
         </TouchableOpacity>
-        <TouchableOpacity onPress={()=>navigation.navigate('회사자세히보기')}>
+        <TouchableOpacity onPress={()=>navigation.navigate('회사자세히보기',{name:'박업체'})}>
         <Company img={comImg2} star='3.8' color='blue' text='수도전문 동진설비입니다. 새로운 수도 설치 전문입니다!' addr='부산 사하구'></Company>
         </TouchableOpacity>
         
@@ -867,12 +838,12 @@ const Register=({navigation})=>{
 
 //=====================================================================
 //=========================업체 자세히보기=============================
-const ComLook=({navigation},prop)=>{
+const ComLook=({navigation,route})=>{
   return(
     <View>
       <ScrollView style={{height:chartHeight-80,marginTop:60,}}>
     <View style={{margin:10,}}>
-      <TestCom></TestCom>
+      <TestCom comname={route.params.name}></TestCom>
 
     </View>
     </ScrollView>

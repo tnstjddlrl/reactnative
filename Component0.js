@@ -8,7 +8,7 @@ import {
 const starimg =require('./review.png')
 const commain =require('./ID11.png')
 const handha =require('./handhart.png')
-const TestCom = () => {
+const TestCom = (prop) => {
   return (
     <View style = {
       {
@@ -53,7 +53,7 @@ const TestCom = () => {
         "marginStart": 2,
         "marginTop": 21
       }
-    } > 김업체 </Text>
+    } > {prop.comname} </Text>
     <Image style = {
       {
         "marginStart": 1,
