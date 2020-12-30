@@ -515,14 +515,14 @@ function App2() {
           name="회원가입"
           options={{ drawerLabel: '회원가입' }}
           component={Register} />
-        <Drawer.Screen
+        {/* <Drawer.Screen
           name="회사자세히보기"
           options={{ drawerLabel: '회사보기테스트' }}
           component={ComLook} />
         <Drawer.Screen
           name="회사테스트"
           options={{ drawerLabel: '회사테스트' }}
-          component={Company} />  
+          component={Company} />   */}
         
       </Drawer.Navigator>
     </NavigationContainer>
