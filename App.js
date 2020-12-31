@@ -156,8 +156,41 @@ const App =({ navigation }) =>{
         <TouchableOpacity onPress={()=>navigation.navigate('회사자세히보기',{name:'박업체'})}>
         <Company img={comImg2} star='3.8' color='blue' text='수도전문 동진설비입니다. 새로운 수도 설치 전문입니다!' addr='부산 사하구'></Company>
         </TouchableOpacity>
-        
-         <EEvent></EEvent>
+        {/* 이벤트 */}
+        <View style={styles.cardview}>
+      <Text style={styles.etitle}>이벤트</Text>
+      <Text style={styles.etitle2}>진행중인 이벤트를 확인해보세요!</Text>
+      <ScrollView
+                pagingEnabled={true}
+                horizontal={true}
+                showsHorizontalScrollIndicator={false}
+                onMomentumScrollEnd ={
+                    () => {console.log('Scrolling is End')}
+                }
+            >
+              
+              <View style={styles.eventList}>
+              <TouchableOpacity onPress={()=>navigation.navigate('이벤트자세히보기',{name:'김업체'})}>
+                <Image source={Eimg} style={styles.imagetest}></Image>
+                </TouchableOpacity>
+                <Text numberOfLines={1} ellipsizeMode='tail' style={{width:180}}>[여름맞이 이벤트]2020년 7~월 수도견적 5000원 할인</Text>
+              </View>
+              
+                <View style={styles.eventList}>
+                  <Image source={Eimg2} style={styles.imagetest}></Image>
+                  <Text numberOfLines={1} ellipsizeMode='tail' style={{width:180}}>[여름맞이 이벤트]2020년 7~월 수도견적 5000원 할인</Text>
+                </View>
+                <View style={styles.eventList}>
+                  <Image source={Eimg3} style={styles.imagetest}></Image>
+                  <Text numberOfLines={1} ellipsizeMode='tail' style={{width:180}}>[여름맞이 이벤트]2020년 7~월 수도견적 5000원 할인</Text>
+              </View>
+              
+          <View>
+          </View>
+
+      </ScrollView>
+    </View>
+                {/* 이벤트 */}
          <SigongBest></SigongBest>
         <REview></REview>
         </ScrollView>
@@ -430,7 +463,7 @@ const EEvent =({navigation}) =>{
             >
               
               <View style={styles.eventList}>
-              <TouchableOpacity onPress={()=>navigation.navigate('회사자세히보기',{name:'김업체'})}>
+              <TouchableOpacity onPress={()=>navigation.navigate('이벤트자세히보기',{name:'김업체'})}>
                 <Image source={Eimg} style={styles.imagetest}></Image>
                 </TouchableOpacity>
                 <Text numberOfLines={1} ellipsizeMode='tail' style={{width:180}}>[여름맞이 이벤트]2020년 7~월 수도견적 5000원 할인</Text>
@@ -533,12 +566,9 @@ function App2() {
           component={Company} />  
         <Drawer.Screen
           name="이벤트자세히보기"
-          options={{ drawerLabel: '' }}
+          options={{ drawerLabel: '이벤트자세히' }}
           component={EventToPage} />  
-          <Drawer.Screen
-          name="이벤트"
-          options={{ drawerLabel: '' }}
-          component={EEvent} />  
+          
       </Drawer.Navigator>
       
     </NavigationContainer>
@@ -981,7 +1011,7 @@ const NavTest = () =>{
 //=====================================================================
 //========================이벤트 자세히보기==============================
 const gif = require('./eventBg.jpg')
-
+const event_1 = require('./event_1.jpg')
 const EventToPage= ({navigation}) => {
   return (
     <View style = {
@@ -1033,9 +1063,7 @@ const EventToPage= ({navigation}) => {
         "height": 209
       }
     }
-    source = {
-      {
-        /* add your source here */ }
+    source = {event_1
     }
     />
     <Text style = {
