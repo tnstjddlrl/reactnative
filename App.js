@@ -161,7 +161,6 @@ const App =({ navigation }) =>{
       <Text style={styles.etitle}>이벤트</Text>
       <Text style={styles.etitle2}>진행중인 이벤트를 확인해보세요!</Text>
       <ScrollView
-                pagingEnabled={true}
                 horizontal={true}
                 showsHorizontalScrollIndicator={false}
                 onMomentumScrollEnd ={
@@ -190,7 +189,7 @@ const App =({ navigation }) =>{
 
       </ScrollView>
     </View>
-                {/* 이벤트 */}
+                {/* 이벤트 끝 */}
          <SigongBest></SigongBest>
         <REview></REview>
         </ScrollView>
@@ -493,7 +492,7 @@ const REview =(prop)=>{
       <ImageBackground source={image} style={styles.image}>
       <Text style={styles.reviewT}>실시간 리뷰</Text>
       <ScrollView
-                pagingEnabled={true}
+                // pagingEnabled={true}
                 horizontal={true}
                 showsHorizontalScrollIndicator={false}
                 onMomentumScrollEnd ={
