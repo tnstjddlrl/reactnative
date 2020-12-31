@@ -25,6 +25,8 @@ import { createDrawerNavigator } from '@react-navigation/drawer';
 import CheckBox from '@react-native-community/checkbox';
 import TestCom from './Component0.js';
 import Phptest from './mysqltest.js'
+import ComSigong from './Component1.js'
+import SigongBtn from './Component1.js'
 
 
 const Stack = createStackNavigator();
@@ -161,7 +163,7 @@ const App =({ navigation }) =>{
       </View>
 
       <View style={{flex:1}}>
-        <View style={{borderWidth:1,position:'absolute',width:chartWidth+15,left:-2,bottom:680,height:60,flexDirection: 'row',backgroundColor:'white'}}>
+        <View style={{borderWidth:1,position:'absolute',width:chartWidth+15,left:-2,bottom:chartHeight-60,height:60,flexDirection: 'row',backgroundColor:'white'}}>
             <TouchableOpacity activeOpacity={0.5} onPress={() => navigation.openDrawer()} style={{top:10,left:10}}>
                 <Image
                 source={logo2}
@@ -174,13 +176,13 @@ const App =({ navigation }) =>{
               </Image>
             </View>
             </TouchableOpacity>
-            <View style={{left:chartWidth/1.8,top:10,width:75,height:35,backgroundColor:'#b84dff',
+            <View style={{left:chartWidth/1.7,top:10,width:75,height:35,backgroundColor:'#b84dff',
                   borderTopLeftRadius: 17,
                   borderTopRightRadius: 17,
                   borderBottomLeftRadius:17,
                   borderBottomRightRadius:17,}}>
               <Text style={{width:65,height:70,marginLeft:10,marginTop:8,color:'white', fontWeight:'bold'}}>
-                PnL Mail
+                PnL Mall
               </Text>
             </View>
         </View>
@@ -229,7 +231,7 @@ const HeadHeder = () => {
   return (
     <View>
     <View style={{flex:1}}>
-      <View style={{borderWidth:1,position:'absolute',width:chartWidth+1,bottom:680,height:60,flexDirection: 'row',backgroundColor:'white'}}>
+      <View style={{borderWidth:1,position:'absolute',width:chartWidth+1,bottom:chartHeight-60,height:60,flexDirection: 'row',backgroundColor:'white'}}>
       <View style={{backgroundColor:'white'}}>
         <Image source={logo2} style={{width:40,height:30,marginTop:15,marginLeft:10}}>
         </Image>
@@ -436,7 +438,8 @@ const EEvent =() =>{
                 <View style={styles.eventList}>
                 <Image source={Eimg3} style={styles.imagetest}></Image>
                 <Text numberOfLines={1} ellipsizeMode='tail' style={{width:180}}>[여름맞이 이벤트]2020년 7~월 수도견적 5000원 할인</Text>
-                </View>
+              </View>
+              
           <View>
           </View>
 
@@ -483,7 +486,7 @@ const ReviewText=(prop)=>{
         <Image source={starimg} style={{width:20,height:20}}></Image>
         <Image source={starimg} style={{width:20,height:20}}></Image>
         <Image source={starimg} style={{width:20,height:20}}></Image>
-        <Image source={starimg} style={{width:20,height:20}}></Image>
+        <Image source={starimg} style={{width:20,height:20}}></Image>   
       </View>
       
     
@@ -828,10 +831,62 @@ const ComLook=({navigation,route})=>{
   return(
     <View>
       <ScrollView style={{height:chartHeight-80,marginTop:60,}}>
-    <View style={{margin:10,}}>
-      <TestCom comname={route.params.name}></TestCom>
-
+        <View style={{margin:10,}}>
+          <TestCom comname={route.params.name}></TestCom>
+          <View style={{marginTop:10}}>
+          <View style = {
+            {
+              "backgroundColor": "rgba(222, 218, 218, 255)",
+              "width": 412,
+              "height": 1
+              
+            }
+            }
+          />
+          </View>
+              
+        </View>
+        <ScrollView
+          horizontal={true}
+          contentContainerStyle={{ width: chartWidth*2 }}
+          showsHorizontalScrollIndicator={false}
+          scrollEventThrottle={200}
+          decelerationRate="fast"
+          pagingEnabled
+          height={340}
+        >
+          <ComSigong></ComSigong><ComSigong></ComSigong><ComSigong></ComSigong><ComSigong></ComSigong>
+        </ScrollView>
+        <View style={{marginBottom:200, alignItems:'center'}}>
+        <View style = {
+      {
+        "alignItems": "flex-start"
+      }
+    } >
+    <View style = {
+      {
+        "alignItems": "flex-start",
+        "paddingStart": 114,
+        "paddingTop": 9,
+        "width": 350,
+        "height": 46,
+        "borderRadius": 11,
+        "backgroundColor": "rgba(71, 67, 55, 255)"
+      }
+    } >
+    <Text style = {
+      {
+        "fontFamily": "Segoe UI",
+        "fontSize": 20,
+        "color": "rgba(255, 255, 255, 255)"
+      }
+    } > 견적의뢰하기 </Text>
     </View>
+    </View>
+    </View>
+          
+
+        
     </ScrollView>
 
     <View style={{flex:1}}>
