@@ -26,7 +26,7 @@ import CheckBox from '@react-native-community/checkbox';
 import TestCom from './Component0.js';
 import Phptest from './mysqltest.js'
 import ComSigong from './Component1.js'
-import SigongBtn from './Component1.js'
+import SigongBest from './Component2.js'
 
 
 const Stack = createStackNavigator();
@@ -147,7 +147,7 @@ const App =({ navigation }) =>{
   return(
     <View>
       <View>
-      <ScrollView showsVerticalScrollIndicator={false}>
+      <ScrollView showsVerticalScrollIndicator={false} style={{backgroundColor:'white'}}>
         <Banner></Banner>
         <Mmenu></Mmenu>
         <TouchableOpacity onPress={()=>navigation.navigate('회사자세히보기',{name:'김업체'})}>
@@ -158,6 +158,7 @@ const App =({ navigation }) =>{
         </TouchableOpacity>
         
          <EEvent></EEvent>
+         <SigongBest></SigongBest>
         <REview></REview>
         </ScrollView>
       </View>
@@ -193,7 +194,7 @@ const App =({ navigation }) =>{
         <View style={{borderWidth:1,position:'absolute',bottom:0,flexDirection: 'row',}}>
         <TouchableOpacity onPress={() => navigation.navigate('홈')}>
         <View style={{backgroundColor:'white'}}>
-          <ImageBackground source={ffimg} style={{width:65,height:65,marginLeft:20}}>
+          <ImageBackground source={ffimg} style={{width:65,height:65,marginLeft:30}}>
           </ImageBackground>
         </View>
         </TouchableOpacity>
@@ -414,7 +415,7 @@ const Mmenutest=()=>{
 const Eimg =require('./e_banner01.jpg')
 const Eimg2 =require('./e_banner02.jpg')
 const Eimg3 =require('./e_banner03.jpg')
-const EEvent =() =>{
+const EEvent =({navigation}) =>{
   return (
     <View style={styles.cardview}>
       <Text style={styles.etitle}>이벤트</Text>
@@ -427,17 +428,21 @@ const EEvent =() =>{
                     () => {console.log('Scrolling is End')}
                 }
             >
+              
               <View style={styles.eventList}>
+              <TouchableOpacity onPress={()=>navigation.navigate('회사자세히보기',{name:'김업체'})}>
                 <Image source={Eimg} style={styles.imagetest}></Image>
+                </TouchableOpacity>
                 <Text numberOfLines={1} ellipsizeMode='tail' style={{width:180}}>[여름맞이 이벤트]2020년 7~월 수도견적 5000원 할인</Text>
+              </View>
+              
+                <View style={styles.eventList}>
+                  <Image source={Eimg2} style={styles.imagetest}></Image>
+                  <Text numberOfLines={1} ellipsizeMode='tail' style={{width:180}}>[여름맞이 이벤트]2020년 7~월 수도견적 5000원 할인</Text>
                 </View>
                 <View style={styles.eventList}>
-                <Image source={Eimg2} style={styles.imagetest}></Image>
-                <Text numberOfLines={1} ellipsizeMode='tail' style={{width:180}}>[여름맞이 이벤트]2020년 7~월 수도견적 5000원 할인</Text>
-                </View>
-                <View style={styles.eventList}>
-                <Image source={Eimg3} style={styles.imagetest}></Image>
-                <Text numberOfLines={1} ellipsizeMode='tail' style={{width:180}}>[여름맞이 이벤트]2020년 7~월 수도견적 5000원 할인</Text>
+                  <Image source={Eimg3} style={styles.imagetest}></Image>
+                  <Text numberOfLines={1} ellipsizeMode='tail' style={{width:180}}>[여름맞이 이벤트]2020년 7~월 수도견적 5000원 할인</Text>
               </View>
               
           <View>
@@ -526,7 +531,16 @@ function App2() {
           name="회사테스트"
           options={{ drawerLabel: '' }}
           component={Company} />  
+        <Drawer.Screen
+          name="이벤트자세히보기"
+          options={{ drawerLabel: '' }}
+          component={EventToPage} />  
+          <Drawer.Screen
+          name="이벤트"
+          options={{ drawerLabel: '' }}
+          component={EEvent} />  
       </Drawer.Navigator>
+      
     </NavigationContainer>
   );
 }
@@ -965,5 +979,80 @@ const NavTest = () =>{
 
 
 //=====================================================================
+//========================이벤트 자세히보기==============================
+const gif = require('./eventBg.jpg')
+
+const EventToPage= ({navigation}) => {
+  return (
+    <View style = {
+      {
+        "alignItems": "flex-start"
+      }
+    } >
+    <ImageBackground style = {
+      {
+        "width": 412,
+        "height": 125
+      }
+    }
+    source = {gif
+    } >
+    <View style = {
+      {
+        "alignItems": "flex-start",
+        "paddingStart": 15,
+        "paddingTop": 48,
+        "flex": 1
+      }
+    } >
+    <Text style = {
+      {
+        "fontFamily": "Segoe UI",
+        "fontWeight": "bold",
+        "fontSize": 18,
+        "color": "rgba(255, 255, 255, 255)"
+      }
+    } > 이벤트 </Text>
+    <View style = {
+      {
+        "marginStart": 0.5,
+        "marginTop": 5.5,
+        "backgroundColor": "rgba(255, 255, 255, 255)",
+        "width": 54,
+        "height": 2
+      }
+    }
+    />
+    </View>
+    </ImageBackground><Text style={{"fontFamily":"Segoe UI","fontWeight":"bold","fontSize":18,"color":"rgba(0, 0, 0, 255)","marginStart":15,"marginTop":12}}>[테스트]인테리어 이벤트 테스트!</Text >
+    <Image style = {
+      {
+        "marginStart": 46,
+        "marginTop": 17,
+        "width": 320,
+        "height": 209
+      }
+    }
+    source = {
+      {
+        /* add your source here */ }
+    }
+    />
+    <Text style = {
+      {
+        "fontFamily": "Segoe UI",
+        "fontWeight": "300",
+        "fontSize": 15,
+        "color": "rgba(0, 0, 0, 255)",
+        "marginStart": 15,
+        "marginTop": 20
+      }
+    } > 내용입니다. </Text>
+    </View>
+
+  );
+};
+//=====================================================================
+
 
 export default App2;
