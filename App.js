@@ -875,7 +875,7 @@ const ComLook=({navigation,route})=>{
   return(
     <View>
       <ScrollView style={{height:chartHeight-80,marginTop:60,}}>
-        <View style={{margin:10,}}>
+        <View style={{margin:20,}}>
           <TestCom comname={route.params.name}></TestCom>
           <View style={{marginTop:10}}>
           <View style = {
@@ -892,16 +892,14 @@ const ComLook=({navigation,route})=>{
         </View>
         <ScrollView
           horizontal={true}
-          contentContainerStyle={{ width: chartWidth*2 }}
           showsHorizontalScrollIndicator={false}
           scrollEventThrottle={200}
           decelerationRate="fast"
-          pagingEnabled
           height={340}
         >
           <ComSigong></ComSigong><ComSigong></ComSigong><ComSigong></ComSigong><ComSigong></ComSigong>
         </ScrollView>
-        <View style={{marginBottom:200, alignItems:'center'}}>
+        <View style={{marginBottom:100, alignItems:'center'}}>
         <View style = {
       {
         "alignItems": "flex-start"
@@ -934,7 +932,7 @@ const ComLook=({navigation,route})=>{
     </ScrollView>
 
     <View style={{flex:1}}>
-        <View style={{borderWidth:1,position:'absolute',width:chartWidth+15,left:-2,bottom:680,height:60,flexDirection: 'row',backgroundColor:'white'}}>
+        <View style={{borderWidth:1,position:'absolute',width:chartWidth+15,left:-2,bottom:chartHeight-80,height:60,flexDirection: 'row',backgroundColor:'white'}}>
             <TouchableOpacity activeOpacity={0.5} onPress={() => navigation.openDrawer()} style={{top:10,left:10}}>
                 <Image
                 source={logo2}
@@ -961,10 +959,10 @@ const ComLook=({navigation,route})=>{
       </View>
 
       <View style={{flex:1}}>
-        <View style={{borderWidth:1,position:'absolute',bottom:0,flexDirection: 'row',}}>
+        <View style={{borderWidth:1,position:'absolute',bottom:-20,flexDirection: 'row',}}>
         <TouchableOpacity onPress={() => navigation.navigate('홈')}>
         <View style={{backgroundColor:'white'}}>
-          <ImageBackground source={ffimg} style={{width:65,height:65,marginLeft:20}}>
+          <ImageBackground source={ffimg} style={{width:65,height:65,marginLeft:30}}>
           </ImageBackground>
         </View>
         </TouchableOpacity>
