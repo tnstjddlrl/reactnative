@@ -524,20 +524,6 @@ function App2() {
           options={{ drawerLabel: '' }}
           component={Company} />  
       </Drawer.Navigator>
-
-      {/* <Stack.Navigator>
-      <Stack.Screen name='홈' component={App} options={{ headerShown: false }}>
-        </Stack.Screen>
-        <Stack.Screen name='로그인' component={Login} options={{ headerShown: false }}>
-        </Stack.Screen>
-        <Stack.Screen name='회원가입' component={Register} options={{ headerShown: false }}>
-        </Stack.Screen>
-        <Stack.Screen name='회사자세히보기' component={ComLook} options={{ headerShown: false }}>
-        </Stack.Screen>
-        <Stack.Screen name='회사테스트' component={Company} options={{ headerShown: false }}>
-        </Stack.Screen>
-      </Stack.Navigator> */}
-
     </NavigationContainer>
   );
 }
