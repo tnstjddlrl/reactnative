@@ -9,7 +9,6 @@ import {
   Dimensions
 } from 'react-native';
 
-import DropDownPicker from 'react-native-dropdown-picker';
 import { TouchableOpacity } from "react-native-gesture-handler";
 
 const event = require('./eventBg.jpg')
@@ -20,17 +19,7 @@ const chartWidth = Dimensions.get('window').width;
 const REquset = () => {
     const [value, onChangeText] = React.useState('');//textinput용
     const [text, setText] = useState("");
-    const setInputText = e => {
-        setText(e.target.value);
-      };
-    const findAddress = (addrr) => {
-        fetch(
-          `http://www.juso.go.kr/addrlink/addrLinkApi.do?currrentPage=1&countPerPage=100&keyword='부산광역시'&confmKey='U01TX0FVVEgyMDIxMDEwNDE0MDQwNTExMDYxOTc='=&resultType=json`
-        )
-          .then(res => res.json())
-          .then(json => console.log(json))
-          .catch(err => console.log(err));
-      };
+   
   return (
     <ScrollView>
     <View style = {
@@ -88,15 +77,7 @@ const REquset = () => {
         "backgroundColor": "rgba(255, 255, 255, 255)"
       }
     }
-    ><DropDownPicker
-    items={[
-        {label: 'USA', value: 'usa',hidden: true},
-        {label: 'UK', value: 'uk',},
-        {label: 'France', value: 'france',},
-    ]}
-    placeholder="카테고리를 선택해주세요"
-    containerStyle={{width:381,height:37}}
-/></View>
+    ></View>
     <Text style = {
       {
         "fontFamily": "Segoe UI",
