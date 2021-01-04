@@ -1,4 +1,5 @@
-import React from 'react';
+import React, { useState } from "react";
+import key from "./key";
 import {
   View,
   Text,
@@ -12,6 +13,19 @@ const event = require('./eventBg.jpg')
 
 
 const REquset = () => {
+
+    const [text, setText] = useState("");
+    const setInputText = e => {
+        setText(e.target.value);
+      };
+    const findAddress = () => {
+        fetch(
+          `http://www.juso.go.kr/addrlink/addrLinkApi.do?currrentPage=1&countPerPage=100&keyword=${text}&confmKey=${key}=&resultType=json`
+        )
+          .then(res => res.json())
+          .then(json => console.log(json))
+          .catch(err => console.log(err));
+      };
   return (
     <ScrollView>
     <View style = {
@@ -75,6 +89,7 @@ const REquset = () => {
         {label: 'UK', value: 'uk',},
         {label: 'France', value: 'france',},
     ]}
+    placeholder="카테고리를 선택해주세요"
     containerStyle={{width:381,height:37}}
 /></View>
     <Text style = {
