@@ -48,7 +48,8 @@ const REquset = () => {
     ];
 
   return (
-    <View>
+    <SafeAreaView>
+   
     <ScrollView>
     <View style = {
       {
@@ -170,8 +171,9 @@ const REquset = () => {
       }
     } >방문날짜 </Text>
     <DatePicker
+        title="Date"
         onChange={(date) => console.log(date)}
-        mode="calender"
+        mode="calendar"
       />
     <Text style = {
       {
@@ -367,7 +369,8 @@ const REquset = () => {
   />
 </View>
 </Modal>
-</View>
+
+</SafeAreaView>
   );
 };
 
