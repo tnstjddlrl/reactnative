@@ -231,7 +231,7 @@ const App =({ navigation }) =>{
           </ImageBackground>
         </View>
         </TouchableOpacity>
-        <TouchableOpacity>
+        <TouchableOpacity onPress={() => navigation.navigate('견적의뢰')}>
         <View style={{backgroundColor:'white'}}>
           <ImageBackground source={ffimg2} style={{width:65,height:65,marginLeft:20,marginRight:10}}>
           </ImageBackground>
