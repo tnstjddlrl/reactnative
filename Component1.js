@@ -9,6 +9,7 @@ const sigong1 = require('./sigong1.jpg')
 
 export default ComSigong = () => {
   return (
+    
     <View style = {
       {
         "alignItems": "flex-start",
