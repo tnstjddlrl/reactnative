@@ -4,23 +4,28 @@ import {
   View,
   Text,
   ImageBackground,
-  ScrollView
+  ScrollView,
+  TextInput,
+  Dimensions
 } from 'react-native';
+
 import DropDownPicker from 'react-native-dropdown-picker';
+import { TouchableOpacity } from "react-native-gesture-handler";
 
 const event = require('./eventBg.jpg')
 
-
+const chartHeight = Dimensions.get('window').height;
+const chartWidth = Dimensions.get('window').width;
 
 const REquset = () => {
-
+    const [value, onChangeText] = React.useState('');//textinput용
     const [text, setText] = useState("");
     const setInputText = e => {
         setText(e.target.value);
       };
-    const findAddress = () => {
+    const findAddress = (addrr) => {
         fetch(
-          `http://www.juso.go.kr/addrlink/addrLinkApi.do?currrentPage=1&countPerPage=100&keyword=${text}&confmKey=${key}=&resultType=json`
+          `http://www.juso.go.kr/addrlink/addrLinkApi.do?currrentPage=1&countPerPage=100&keyword='부산광역시'&confmKey='U01TX0FVVEgyMDIxMDEwNDE0MDQwNTExMDYxOTc='=&resultType=json`
         )
           .then(res => res.json())
           .then(json => console.log(json))
@@ -137,7 +142,11 @@ const REquset = () => {
         "backgroundColor": "rgba(255, 255, 255, 255)"
       }
     }
-    />
+    ><TextInput
+            style={{ height: 37,width:325, borderColor: 'gray', borderWidth: 1 }}
+            onChangeText={(addrr)=>setText(addrr)}
+            value={text}
+        /></View>
     <View style = {
       {
         "alignItems": "flex-start",
@@ -313,7 +322,9 @@ const REquset = () => {
         flexDirection: 'row',
         alignItems: 'flex-start'
       }
-    } ><View style = {
+    } >
+    <TouchableOpacity onPress={()=>findAddress('부산광역시')}>
+    <View style = {
       {
         "alignItems": "flex-start",
         "paddingStart": 19,
@@ -334,6 +345,7 @@ const REquset = () => {
       }
     } > 작성하기 </Text>
     </View>
+    </TouchableOpacity>
     <View style = {
       {
         "alignItems": "flex-start",
