@@ -257,6 +257,146 @@ const App =({ navigation }) =>{
     </View>
   )
 }
+
+const starimg =require('./review.png')
+const comImg = require('./14.png')
+const comImg2 =require('./123.png')
+const maker = require('./img/main_marker.png')
+
+const Company=(prop)=>{
+  return(
+    <View style={{marginLeft:15,marginTop:15}}>
+<View style = {
+  {
+    "alignItems": "flex-start",
+    "paddingStart": 10,
+    "paddingTop": 11,
+    "width": 385,
+    "height": 175,
+    "borderRadius": 7,
+    "backgroundColor": "rgba(247, 247, 247, 255)"
+  }
+} >
+<View style = {
+  {
+    flexDirection: 'row',
+    alignItems: 'flex-start'
+  }
+} ><Image style = {
+  {
+    "width": 50,
+    "height": 50,
+    "borderRadius": 25,
+    "transform": [{
+      "scaleX": 1.02
+    }]
+  }
+}
+source = {prop.img}
+
+/>
+<View style = {
+  {
+    "alignItems": "flex-start",
+    "marginStart": 218,
+    "marginTop": 12
+  }
+} >
+<View style = {
+  {
+    "alignItems": "flex-start",
+    "paddingStart": 8,
+    "paddingTop": 5,
+    "width": 88,
+    "height": 26,
+    "borderRadius": 6,
+    "borderWidth": 1,
+    "borderColor": "rgba(147, 147, 147, 255)",
+    "backgroundColor": "rgba(247, 247, 247, 255)"
+  }
+} >
+<Text style = {
+  {
+    "fontFamily": "Segoe UI",
+    "fontWeight": "bold",
+    "fontStyle": "italic",
+    "fontSize": 12,
+    "color": "rgba(91, 92, 101, 255)",
+    fontFamily:"Noto Sans KR",
+  }
+} >시공사례 5 건 </Text>
+</View>
+</View>
+</View>
+<Text style = {
+  {
+    "fontFamily": "Segoe UI",
+    "fontWeight": "bold",
+    "fontStyle": "italic",
+    "fontSize": 12,
+    "color": "rgba(91, 92, 101, 255)",
+    "marginStart": 7,
+    "marginTop": 14
+  }
+} >{prop.text}</Text>
+<View style = {
+  {
+    flexDirection: 'row',
+    alignItems: 'flex-start'
+  }
+} ><Image style = {
+  {
+    "marginTop": 37,
+    "width": 19,
+    "height": 19
+  }
+}
+source = {maker
+}
+/>
+<Image style = {
+  {
+    "marginStart": 286,
+    "marginTop": 34,
+    "width": 19,
+    "height": 19
+  }
+}
+source = {starimg
+}
+/>
+<Text style = {
+  {
+    "fontFamily": "Segoe UI",
+    "fontWeight": "bold",
+    "fontStyle": "italic",
+    "fontSize": 12,
+    "color": "rgba(103, 83, 80, 255)",
+    "marginStart": -298,
+    "marginTop": 37
+  }
+} >{prop.addr}</Text>
+<Text style = {
+  {
+    "fontFamily": "Segoe UI",
+    "fontWeight": "bold",
+    "fontStyle": "italic",
+    "fontSize": 12,
+    "color": "rgba(103, 83, 80, 255)",
+    "marginStart": 250,
+    "marginTop": 34
+  }
+} >  {prop.star}</Text>
+</View>
+</View>
+</View>
+
+
+  )
+}
+
+
+
 const logo = { uri: "https://pluslink.kr/img/pluslink/logo.png" };
 const logo2 = { uri: "https://pluslink.kr/img/menu.png" };
 const testlogo = require('./logo.png')
@@ -612,27 +752,7 @@ const Mmenu = () =>{
   )
 }
 
-const starimg =require('./review.png')
-const comImg = require('./14.png')
-const comImg2 =require('./123.png')
-const Company=(prop)=>{
-  return(
-    <View>
-      
-      <View style={{width:chartWidth-20,height:150, margin:10, backgroundColor:'#e0ebeb',borderTopLeftRadius:10,borderTopRightRadius:10,borderBottomEndRadius:10,borderBottomLeftRadius:10}}>
-        <View style={{left:10,top:10,width:50,height:50,position:'absolute',backgroundColor:prop.color,borderTopLeftRadius:30,borderTopRightRadius:30,borderBottomEndRadius:30,borderBottomLeftRadius:30}}></View>
-        <Image source={prop.img} style={{left:10,top:10,width:50,height:50,position:'absolute',borderTopLeftRadius:30,borderTopRightRadius:30,borderBottomRightRadius:30,borderBottomLeftRadius:30}}></Image>
-        <Text numberOfLines={1} ellipsizeMode='tail' style={{top:70,marginLeft:10,marginRight:10}} >{prop.text}</Text>
-        <Text style={{top:100,left:10,fontSize:12,}}>{prop.addr}</Text>
-        <View style={{flex:1,position:'absolute',bottom:15,right:10,flexDirection:'row'}}>
-          <Image source={starimg} style={{height:20,width:20}}></Image>
-          <Text>{prop.star}</Text>
-        </View>
-      </View>
-      
-    </View>
-  )
-}
+
 
 const Mmenutest=()=>{
   return(
