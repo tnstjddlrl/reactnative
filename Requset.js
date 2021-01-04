@@ -7,10 +7,24 @@ import {
   ScrollView,
   TextInput,
   Dimensions,
-  Modal
+  Modal,
+  SafeAreaView 
 } from 'react-native';
 import Postcode from 'react-native-daum-postcode';
 import { TouchableOpacity } from "react-native-gesture-handler";
+
+import {
+  DateRangePicker,
+  DatePicker,
+  TimePicker,
+  DateTimePicker,
+  ListPicker,
+  NumberPicker,
+  CookingAmountPicker,
+  StatePicker,
+  StatePickerSmall,
+  TextField,
+} from 'react-native-ultimate-modal-picker';
 
 const event = require('./eventBg.jpg')
 
@@ -21,6 +35,18 @@ const REquset = () => {
     const [value, onChangeText] = React.useState('');//textinput용
     const [text, setText] = useState("기본주소");
     const [show, setShow] = React.useState(false);//textinput용
+
+    const items = [
+      { label: '전기&조명', value: '전기&조명' },
+      { label: '수도', value: '수도' },
+      { label: '도배&장판', value: '도배&장판' },
+      { label: '인테리어', value: '인테리어' },
+      { label: '샷시&창호', value: '샷시&창호' },
+      { label: '청소&철거', value: '청소&철거' },
+      { label: '보일러&배관', value: '보일러&배관' },
+      { label: '건물외부', value: '건물외부' },
+    ];
+
   return (
     <View>
     <ScrollView>
@@ -66,20 +92,12 @@ const REquset = () => {
     />
     </View>
     </ImageBackground>
-    <Text style={{"fontFamily":"Segoe UI","fontWeight":"bold","fontSize":16,"color":"rgba(0, 0, 0, 255)","marginStart":16,"marginTop":37}}>카테고리ㅇ</Text >
-    <View style = {
-      {
-        "alignItems": "flex-start",
-        "marginStart": 15,
-        "marginTop": 9,
-        "width": 381,
-        "height": 38,
-        "borderWidth": 1,
-        "borderColor": "rgba(171, 171, 171, 255)",
-        "backgroundColor": "rgba(255, 255, 255, 255)"
-      }
-    }
-    ></View>
+    <Text style={{"fontFamily":"Segoe UI","fontWeight":"bold","fontSize":16,"color":"rgba(0, 0, 0, 255)","marginStart":16,"marginTop":37}}>카테고리</Text >
+    <ListPicker
+    items={items}
+    style={{width:350}}
+    onChange={(item) => console.log(item)}
+  />
     <Text style = {
       {
         "fontFamily": "Segoe UI",
@@ -151,19 +169,10 @@ const REquset = () => {
         "marginTop": 17
       }
     } >방문날짜 </Text>
-    <View style = {
-      {
-        "alignItems": "flex-start",
-        "marginStart": 15,
-        "marginTop": 8,
-        "width": 325,
-        "height": 37,
-        "borderWidth": 1,
-        "borderColor": "rgba(171, 171, 171, 255)",
-        "backgroundColor": "rgba(255, 255, 255, 255)"
-      }
-    }
-    />
+    <DatePicker
+        onChange={(date) => console.log(date)}
+        mode="calender"
+      />
     <Text style = {
       {
         "fontFamily": "Segoe UI",
