@@ -6,9 +6,10 @@ import {
   ImageBackground,
   ScrollView,
   TextInput,
-  Dimensions
+  Dimensions,
+  Modal
 } from 'react-native';
-
+import Postcode from 'react-native-daum-postcode';
 import { TouchableOpacity } from "react-native-gesture-handler";
 
 const event = require('./eventBg.jpg')
@@ -18,9 +19,10 @@ const chartWidth = Dimensions.get('window').width;
 
 const REquset = () => {
     const [value, onChangeText] = React.useState('');//textinput용
-    const [text, setText] = useState("");
-   
+    const [text, setText] = useState("기본주소");
+    const [show, setShow] = React.useState(false);//textinput용
   return (
+    <View>
     <ScrollView>
     <View style = {
       {
@@ -111,6 +113,7 @@ const REquset = () => {
         "marginTop": 17
       }
     } >시공주소 </Text>
+    <TouchableOpacity onPress={()=>setShow(true)}>
     <View style = {
       {
         "alignItems": "flex-start",
@@ -123,11 +126,8 @@ const REquset = () => {
         "backgroundColor": "rgba(255, 255, 255, 255)"
       }
     }
-    ><TextInput
-            style={{ height: 37,width:325, borderColor: 'gray', borderWidth: 1 }}
-            onChangeText={(addrr)=>setText(addrr)}
-            value={text}
-        /></View>
+    ><Text>{text}</Text></View>
+        </TouchableOpacity>
     <View style = {
       {
         "alignItems": "flex-start",
@@ -304,7 +304,6 @@ const REquset = () => {
         alignItems: 'flex-start'
       }
     } >
-    <TouchableOpacity onPress={()=>findAddress('부산광역시')}>
     <View style = {
       {
         "alignItems": "flex-start",
@@ -326,7 +325,6 @@ const REquset = () => {
       }
     } > 작성하기 </Text>
     </View>
-    </TouchableOpacity>
     <View style = {
       {
         "alignItems": "flex-start",
@@ -352,6 +350,15 @@ const REquset = () => {
     </View>
     </ScrollView>
 
+<Modal transparent={true} visible={show}>
+<View style={{width:300, height:500,position:'absolute',margin:30}}>
+  <Postcode
+      jsOptions={{ animated: true }}
+      onSelected={(data) => {setText(JSON.stringify(data.address)),setShow(false)}}
+  />
+</View>
+</Modal>
+</View>
   );
 };
 

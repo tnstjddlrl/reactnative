@@ -21,13 +21,15 @@
     "mysql": "^2.18.1",
     "react": "16.13.1",
     "react-native": "0.63.4",
+    "react-native-daum-postcode": "^1.0.9",
     "react-native-dropdown-picker": "^3.7.6",
     "react-native-gesture-handler": "^1.9.0",
     "react-native-my-sql-connection": "^1.0.4",
     "react-native-reanimated": "^1.13.2",
     "react-native-safe-area-context": "^3.1.9",
     "react-native-screens": "^2.16.1",
-    "react-native-swiper": "^1.6.0-rc.3"
+    "react-native-swiper": "^1.6.0-rc.3",
+    "react-native-webview": "^11.0.2"
   },
   "devDependencies": {
     "@babel/core": "^7.8.4",
