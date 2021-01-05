@@ -93,7 +93,7 @@ const REquset = () => {
     />
     </View>
     </ImageBackground>
-    <Text style={{"fontFamily":"Segoe UI","fontWeight":"bold","fontSize":16,"color":"rgba(0, 0, 0, 255)","marginStart":16,"marginTop":37}}>카테고리</Text >
+    <Text style={{"fontFamily":"Segoe UI","fontWeight":"bold","fontSize":16,"color":"rgba(0, 0, 0, 255)","marginStart":16,"marginTop":37}}>카테고리d</Text >
     <ListPicker
     items={items}
     style={{width:350}}
