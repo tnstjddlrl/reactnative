@@ -28,6 +28,7 @@ import Phptest from './mysqltest.js'
 import ComSigong from './Component1.js'
 import SigongBest from './Component2.js'
 import REquset from './Requset.js'
+import CurGyeon from './CurrentGyeon.js'
 
 const Stack = createStackNavigator();
 const Drawer = createDrawerNavigator();
@@ -893,6 +894,10 @@ function App2() {
           name="견적의뢰"
           options={{ drawerLabel: '견적의뢰' }}
           component={REquset} />  
+        <Drawer.Screen
+          name="견적현황"
+          options={{ drawerLabel: '견적현황' }}
+          component={CurGyeon} />  
         
           
       </Drawer.Navigator>
