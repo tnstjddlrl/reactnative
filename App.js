@@ -50,6 +50,8 @@ const chartWidth = Dimensions.get('window').width;
 
 
 
+
+
 const App =({ navigation }) =>{
   const logo = { uri: "https://pluslink.kr/img/pluslink/logo.png" };
   const logo2 = { uri: "https://pluslink.kr/img/menu.png" };
@@ -69,7 +71,9 @@ const App =({ navigation }) =>{
 
        
         <EEvent></EEvent>
+        <View style={{width:chartWidth}}>
         <SigongBest></SigongBest>
+        </View>
         <REview></REview>
 
         </ScrollView>
