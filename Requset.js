@@ -34,7 +34,7 @@ const chartWidth = Dimensions.get('window').width;
 const REquset = () => {
     const [value, onChangeText] = React.useState('');//textinput용
     const [text, setText] = useState("기본주소");
-    const [show, setShow] = React.useState(false);//textinput용
+    const [show, setShow] = React.useState(false);//modal용
 
     const items = [
       { label: '전기&조명', value: '전기&조명' },
@@ -170,11 +170,6 @@ const REquset = () => {
         "marginTop": 17
       }
     } >방문날짜 </Text>
-    <DatePicker
-        title="Date"
-        onChange={(date) => console.log(date)}
-        mode="calendar"
-      />
     <Text style = {
       {
         "fontFamily": "Segoe UI",

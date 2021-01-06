@@ -83,7 +83,7 @@ const styles = StyleSheet.create({
       borderBottomLeftRadius:10,
       borderBottomRightRadius:10,
       marginLeft: 10,
-      marginRight: 20,
+      marginRight: 0,
   },image: {
     flex: 1,
     resizeMode: "cover",

@@ -28,7 +28,7 @@ import SigongBest from './Component2.js'
 import REquset from './Requset.js'
 import CurGyeon from './CurrentGyeon.js'
 import Login from './Login.js'
-import Company from './Company.js'
+
 import EventToPage from './Eventtopage.js'
 import Banner from './Banner.js'
 import styles from './styles.js'
@@ -38,6 +38,7 @@ import Register from './register.js'
 import FootTer from './footer.js'
 import HeadHeder from "./header.js";
 import ComLook from './comlook.js'
+import Company from './Company.js'
 import EEvent from './eevent.js'
 
 
@@ -70,7 +71,7 @@ const App =({ navigation }) =>{
         <EEvent></EEvent>
         <SigongBest></SigongBest>
         <REview></REview>
-        
+
         </ScrollView>
       </View>
 
@@ -95,10 +96,6 @@ const ffimg4 =require('./img/b04.png')
 const logo = { uri: "https://pluslink.kr/img/pluslink/logo.png" };
 const logo2 = { uri: "https://pluslink.kr/img/menu.png" };
 const testlogo = require('./img/logo.png')
-
-
-
-
 
 const Eimg =require('./img/e_banner01.jpg')
 const Eimg2 =require('./img/e_banner02.jpg')
@@ -148,23 +145,6 @@ function App2() {
 }
 //----------------------------------------------------------
 
-
-
-
-//============================화면넘기기테스트===========================
-const NavTest = () =>{
-  return(
-    <View>
-      <Text>안녕</Text>
-
-    </View>
-  )
-}
-
-
-//=====================================================================
-
-//=====================================================================
 
 
 export default App2;//App2

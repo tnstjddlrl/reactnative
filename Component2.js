@@ -3,8 +3,13 @@ import {
   View,
   Text,
   Image,
-  ImageBackground
+  ImageBackground,
+  Dimensions
 } from 'react-native';
+
+const chartHeight = Dimensions.get('window').height;
+const chartWidth = Dimensions.get('window').width;
+
 
 const bg_1 = require('./img/case_bg.png')
 const best1 = require('./img/best1.png')
@@ -14,7 +19,7 @@ const best4 = require('./img/best4.jpg')
 const bongwoo = require('./img/bongwoo.png')
 const SigongBest = () => {
   return (
-      <View style={{marginBottom:20}}>
+      <View style={{marginBottom:20, width:chartWidth-50}}>
     <View style = {
         {
           "alignItems": "flex-start"

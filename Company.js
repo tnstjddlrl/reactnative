@@ -32,7 +32,7 @@ const Company=(prop)=>{
       "alignItems": "flex-start",
       "paddingStart": 10,
       "paddingTop": 11,
-      "width": 385,
+      "width": chartWidth-30,
       "height": 175,
       "borderRadius": 7,
       "backgroundColor": "rgba(247, 247, 247, 255)"
