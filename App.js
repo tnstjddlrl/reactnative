@@ -55,6 +55,8 @@ const chartWidth = Dimensions.get('window').width;
 const App =({ navigation }) =>{
   const logo = { uri: "https://pluslink.kr/img/pluslink/logo.png" };
   const logo2 = { uri: "https://pluslink.kr/img/menu.png" };
+
+  
   return(
     <View>
       <View>
