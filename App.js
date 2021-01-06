@@ -48,15 +48,13 @@ const Drawer = createDrawerNavigator();
 const chartHeight = Dimensions.get('window').height;
 const chartWidth = Dimensions.get('window').width;
 
-
-
-
+let shown = false;
 
 const App =({ navigation }) =>{
   const logo = { uri: "https://pluslink.kr/img/pluslink/logo.png" };
   const logo2 = { uri: "https://pluslink.kr/img/menu.png" };
 
-  
+
   return(
     <View>
       <View>
