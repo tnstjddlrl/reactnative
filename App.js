@@ -1,4 +1,4 @@
-import React,{useState,Component} from "react";
+import React,{useState,Component,useEffect} from "react";
 import {
   SafeAreaView,
   ScrollView,
@@ -29,6 +29,8 @@ import ComSigong from './Component1.js'
 import SigongBest from './Component2.js'
 import REquset from './Requset.js'
 import CurGyeon from './CurrentGyeon.js'
+
+import Axios from 'axios';
 
 const Stack = createStackNavigator();
 const Drawer = createDrawerNavigator();
@@ -142,6 +144,11 @@ button:{
 }
 
 })
+
+
+
+
+
 
 const App =({ navigation }) =>{
   const logo = { uri: "https://pluslink.kr/img/pluslink/logo.png" };
@@ -1412,4 +1419,4 @@ const EventToPage= ({navigation}) => {
 //=====================================================================
 
 
-export default App2;
+export default App2;//App2
