@@ -21,9 +21,9 @@ import { NavigationContainer } from '@react-navigation/native';
 import { createStackNavigator } from '@react-navigation/stack';
 import { createDrawerNavigator } from '@react-navigation/drawer';
 import CheckBox from '@react-native-community/checkbox';
-import TestCom from './Component0.js';
+
 import Phptest from './mysqltest.js'
-import ComSigong from './Component1.js'
+
 import SigongBest from './Component2.js'
 import REquset from './Requset.js'
 import CurGyeon from './CurrentGyeon.js'
@@ -36,6 +36,8 @@ import Mmenu from './Mmenu.js'
 import REview from './Review.js'
 import Register from './register.js'
 import FootTer from './footer.js'
+import HeadHeder from "./header.js";
+import ComLook from './comlook.js'
 
 
 const Stack = createStackNavigator();
@@ -103,32 +105,7 @@ const App =({ navigation }) =>{
         </ScrollView>
       </View>
 
-      <View style={{flex:1}}>
-        <View style={{borderWidth:1,position:'absolute',width:chartWidth+15,left:-2,bottom:chartHeight-60,height:60,flexDirection: 'row',backgroundColor:'white'}}>
-            <TouchableOpacity activeOpacity={0.5} onPress={() => navigation.openDrawer()} style={{top:10,left:10}}>
-                <Image
-                source={logo2}
-                style={{width:40,height:35}}
-                />
-            </TouchableOpacity>
-            <TouchableOpacity onPress={() => navigation.navigate('홈')}>
-            <View style={{left:chartWidth/3,height:30,width:40}}>
-              <Image source={testlogo} style={{width:40,height:34,marginTop:10,}}>
-              </Image>
-            </View>
-            </TouchableOpacity>
-            <View style={{left:chartWidth/1.7,top:10,width:75,height:35,backgroundColor:'#b84dff',
-                  borderTopLeftRadius: 17,
-                  borderTopRightRadius: 17,
-                  borderBottomLeftRadius:17,
-                  borderBottomRightRadius:17,}}>
-              <Text style={{width:65,height:70,marginLeft:10,marginTop:8,color:'white', fontWeight:'bold'}}>
-                PnL Mall
-              </Text>
-            </View>
-        </View>
-      </View>
-      
+      <HeadHeder></HeadHeder>
 
       <FootTer></FootTer>
 
@@ -147,41 +124,10 @@ const ffimg2 =require('./img/b02.png')
 const ffimg3 =require('./img/b03.png')
 const ffimg4 =require('./img/b04.png')
 
-
 const logo = { uri: "https://pluslink.kr/img/pluslink/logo.png" };
 const logo2 = { uri: "https://pluslink.kr/img/menu.png" };
 const testlogo = require('./img/logo.png')
 
-const HeadHeder = () => {
-  return (
-    <View>
-    <View style={{flex:1}}>
-      <View style={{borderWidth:1,position:'absolute',width:chartWidth+1,bottom:chartHeight-60,height:60,flexDirection: 'row',backgroundColor:'white'}}>
-      <View style={{backgroundColor:'white'}}>
-        <Image source={logo2} style={{width:40,height:30,marginTop:15,marginLeft:10}}>
-        </Image>
-      </View>
-      <View style={{left:chartWidth/3,height:30,width:40}}>
-        <Image source={testlogo} style={{width:40,height:34,marginTop:10,}}>
-        </Image>
-      </View>
-      <View style={{left:chartWidth/1.8,top:10,width:75,height:35,backgroundColor:'#b84dff',
-            borderTopLeftRadius: 17,
-            borderTopRightRadius: 17,
-            borderBottomLeftRadius:17,
-            borderBottomRightRadius:17,}}>
-        <Text style={{width:65,height:70,marginLeft:10,marginTop:8,color:'white', fontWeight:'bold'}}>
-          PnL Mail
-        </Text>
-      </View>
-      
-
-      </View>
-    </View>
-    </View>
-   
-  );
-};
 
 
 
@@ -272,130 +218,7 @@ function App2() {
 //----------------------------------------------------------
 
 
-//=========================업체 자세히보기=============================
-const ComLook=({navigation,route})=>{
-  return(
-    <View>
-      <ScrollView style={{height:chartHeight-80,marginTop:60,}}>
-        <View style={{margin:20,}}>
-          <TestCom comname={route.params.name}></TestCom>
-          <View style={{marginTop:10}}>
-          <View style = {
-            {
-              "backgroundColor": "rgba(222, 218, 218, 255)",
-              "width": 412,
-              "height": 1
-              
-            }
-            }
-          />
-          </View>
-              
-        </View>
-        <ScrollView
-          horizontal={true}
-          showsHorizontalScrollIndicator={false}
-          scrollEventThrottle={200}
-          decelerationRate="fast"
-          height={340}
-        >
-          <ComSigong></ComSigong><ComSigong></ComSigong><ComSigong></ComSigong><ComSigong></ComSigong>
-        </ScrollView>
-        <View style={{marginBottom:100, alignItems:'center'}}>
-        <View style = {
-      {
-        "alignItems": "flex-start"
-      }
-    } >
-    <View style = {
-      {
-        "alignItems": "flex-start",
-        "paddingStart": 114,
-        "paddingTop": 9,
-        "width": 350,
-        "height": 46,
-        "borderRadius": 11,
-        "backgroundColor": "rgba(71, 67, 55, 255)"
-      }
-    } >
-    <Text style = {
-      {
-        "fontFamily": "Segoe UI",
-        "fontSize": 20,
-        "color": "rgba(255, 255, 255, 255)"
-      }
-    } > 견적의뢰하기 </Text>
-    </View>
-    </View>
-    </View>
-          
 
-        
-    </ScrollView>
-
-    <View style={{flex:1}}>
-        <View style={{borderWidth:1,position:'absolute',width:chartWidth+15,left:-2,bottom:chartHeight-80,height:60,flexDirection: 'row',backgroundColor:'white'}}>
-            <TouchableOpacity activeOpacity={0.5} onPress={() => navigation.openDrawer()} style={{top:10,left:10}}>
-                <Image
-                source={logo2}
-                style={{width:40,height:35}}
-                />
-            </TouchableOpacity>
-            <View style={{left:chartWidth/3,height:30,width:40}}>
-            <TouchableOpacity onPress={() => navigation.navigate('홈')}>
-              <Image source={testlogo} style={{width:40,height:34,marginTop:10,}}>
-              </Image>
-            </TouchableOpacity>
-            </View>
-            
-            <View style={{left:chartWidth/1.8,top:10,width:75,height:35,backgroundColor:'#b84dff',
-                  borderTopLeftRadius: 17,
-                  borderTopRightRadius: 17,
-                  borderBottomLeftRadius:17,
-                  borderBottomRightRadius:17,}}>
-              <Text style={{width:65,height:70,marginLeft:10,marginTop:8,color:'white', fontWeight:'bold'}}>
-                PnL Mail
-              </Text>
-            </View>
-        </View>
-      </View>
-
-      <View style={{flex:1}}>
-        <View style={{borderWidth:1,position:'absolute',bottom:-20,flexDirection: 'row',}}>
-        <TouchableOpacity onPress={() => navigation.navigate('홈')}>
-        <View style={{backgroundColor:'white'}}>
-          <ImageBackground source={ffimg} style={{width:65,height:65,marginLeft:30}}>
-          </ImageBackground>
-        </View>
-        </TouchableOpacity>
-        <TouchableOpacity>
-        <View style={{backgroundColor:'white'}}>
-          <ImageBackground source={ffimg2} style={{width:65,height:65,marginLeft:20,marginRight:10}}>
-          </ImageBackground>
-        </View>
-        </TouchableOpacity>
-        <TouchableOpacity>
-        <View style={{backgroundColor:'white'}}>
-          <ImageBackground source={ffimg3} style={{width:65,height:65,marginLeft:20,marginRight:10}}>
-          </ImageBackground>
-        </View>
-        </TouchableOpacity>
-        <TouchableOpacity>
-        <View style={{backgroundColor:'white'}}>
-          <ImageBackground source={ffimg4} style={{width:65,height:65,marginLeft:20,marginRight:40}}>
-          </ImageBackground>
-        </View>
-        </TouchableOpacity>
-        </View>
-      </View>
-
-    </View>
-  )
-}
-
-
-
-//=====================================================================
 
 //============================화면넘기기테스트===========================
 const NavTest = () =>{
