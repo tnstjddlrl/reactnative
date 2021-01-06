@@ -130,7 +130,7 @@ const App =({ navigation }) =>{
       </View>
       
 
-      <FootTer prop={navigation}></FootTer>
+      <FootTer></FootTer>
 
         
     </View>

@@ -18,9 +18,7 @@ import {
 const chartHeight = Dimensions.get('window').height;
 const chartWidth = Dimensions.get('window').width;
 import styles from './styles.js'
-import { NavigationContainer,useNavigation } from '@react-navigation/native';
-import { createStackNavigator } from '@react-navigation/stack';
-import { createDrawerNavigator } from '@react-navigation/drawer';
+import { useNavigation } from '@react-navigation/native';
 
 
 const ffimg =require('./img/b01.png')
