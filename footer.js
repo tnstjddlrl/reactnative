@@ -22,7 +22,6 @@ import { NavigationContainer,useNavigation } from '@react-navigation/native';
 import { createStackNavigator } from '@react-navigation/stack';
 import { createDrawerNavigator } from '@react-navigation/drawer';
 
-import { withNavigation } from 'react-navigation';
 
 const ffimg =require('./img/b01.png')
 const ffimg2 =require('./img/b02.png')
