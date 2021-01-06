@@ -5,6 +5,8 @@ import {
   ImageBackground
 } from 'react-native';
 
+const event = require('./img/eventBg.jpg')
+
 const CurGyeon = () => {
     return (
         <View style = {
@@ -18,9 +20,7 @@ const CurGyeon = () => {
             "height": 125
           }
         }
-        source = {
-          {
-            /* add your source here */ }
+        source = {event
         } >
         <View style = {
           {
@@ -93,7 +93,7 @@ const CurGyeon = () => {
             flexDirection: 'row',
             alignItems: 'flex-start'
           }
-        } > <Text style = {
+        } ><Text style = {
           {
             "fontFamily": "Segoe UI",
             "fontWeight": "bold",
@@ -146,7 +146,7 @@ const CurGyeon = () => {
             flexDirection: 'row',
             alignItems: 'flex-start'
           }
-        } > <Text style = {
+        } ><Text style = {
           {
             "fontFamily": "Segoe UI",
             "fontWeight": "bold",
@@ -199,7 +199,7 @@ const CurGyeon = () => {
             flexDirection: 'row',
             alignItems: 'flex-start'
           }
-        } > <Text style = {
+        } ><Text style = {
           {
             "fontFamily": "Segoe UI",
             "fontWeight": "bold",
@@ -252,7 +252,7 @@ const CurGyeon = () => {
             flexDirection: 'row',
             alignItems: 'flex-start'
           }
-        } > <Text style = {
+        } ><Text style = {
           {
             "fontFamily": "Segoe UI",
             "fontWeight": "bold",
@@ -305,7 +305,7 @@ const CurGyeon = () => {
             flexDirection: 'row',
             alignItems: 'flex-start'
           }
-        } > <Text style = {
+        } ><Text style = {
           {
             "fontFamily": "Segoe UI",
             "fontWeight": "bold",
@@ -358,7 +358,7 @@ const CurGyeon = () => {
             flexDirection: 'row',
             alignItems: 'flex-start'
           }
-        } > <Text style = {
+        } ><Text style = {
           {
             "fontFamily": "Segoe UI",
             "fontWeight": "bold",

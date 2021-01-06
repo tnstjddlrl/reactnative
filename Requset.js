@@ -26,7 +26,7 @@ import {
   TextField,
 } from 'react-native-ultimate-modal-picker';
 
-const event = require('./eventBg.jpg')
+const event = require('./img/eventBg.jpg')
 
 const chartHeight = Dimensions.get('window').height;
 const chartWidth = Dimensions.get('window').width;

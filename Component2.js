@@ -6,7 +6,7 @@ import {
   ImageBackground
 } from 'react-native';
 
-const bg_1 = require('./case_bg.png')
+const bg_1 = require('./img/case_bg.png')
 const best1 = require('./img/best1.png')
 const best2 = require('./img/best2.jpg')
 const best3 = require('./img/best3.jpg')

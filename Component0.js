@@ -5,9 +5,9 @@ import {
   Image
 } from 'react-native';
 
-const starimg =require('./review.png')
-const commain =require('./ID11.png')
-const handha =require('./handhart.png')
+const starimg =require('./img/review.png')
+const commain =require('./img/ID11.png')
+const handha =require('./img/handhart.png')
 const TestCom = (prop) => {
   return (
     <View style = {

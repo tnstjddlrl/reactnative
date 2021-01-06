@@ -5,7 +5,7 @@ import {
   Image
 } from 'react-native';
 
-const sigong1 = require('./sigong1.jpg')
+const sigong1 = require('./img/sigong1.jpg')
 
 export default ComSigong = () => {
   return (
