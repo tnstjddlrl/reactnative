@@ -71,7 +71,7 @@ const App =({ navigation }) =>{
 
        
         <EEvent></EEvent>
-        <View style={{width:chartWidth}}>
+        <View style={{}}>
         <SigongBest></SigongBest>
         </View>
         <REview></REview>

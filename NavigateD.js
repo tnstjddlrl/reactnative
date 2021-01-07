@@ -24,7 +24,7 @@ import styles from './styles.js'
 const NaviMenu = (prop) => {
     return(
         <Modal transparent={true} visible={prop.show}>
-            <View style={{backgroundColor:'black', width:300}}></View>
+            <View style={{backgroundColor:'black', width:chartWidth-chartWidth/2.2, height:300}}></View>
         </Modal>
     )
 }

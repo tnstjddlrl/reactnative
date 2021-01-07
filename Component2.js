@@ -19,7 +19,7 @@ const best4 = require('./img/best4.jpg')
 const bongwoo = require('./img/bongwoo.png')
 const SigongBest = () => {
   return (
-      <View style={{marginBottom:20, width:chartWidth-50}}>
+      <View style={{marginBottom:30,marginRight:10}}>
     <View style = {
         {
           "alignItems": "flex-start"
@@ -66,7 +66,7 @@ const SigongBest = () => {
           "paddingTop": 1,
           "marginStart": -402,
           "marginTop": 170,
-          "width": 190,
+          "width": chartWidth/2.2,
           "height": 268,
           "borderWidth": 1,
           "borderColor": "rgba(229, 229, 229, 255)",
@@ -75,7 +75,7 @@ const SigongBest = () => {
       } >
       <Image style = {
         {
-          "width": 189,
+          "width": chartWidth/2.2,
           "height": 145,
           "borderWidth": 1,
           "borderColor": "rgba(229, 229, 229, 255)"
@@ -140,7 +140,7 @@ const SigongBest = () => {
           "paddingTop": 1,
           "marginStart": 11,
           "marginTop": 171,
-          "width": 190,
+          "width": chartWidth/2.2,
           "height": 268,
           "borderWidth": 1,
           "borderColor": "rgba(229, 229, 229, 255)",
@@ -149,7 +149,7 @@ const SigongBest = () => {
       } >
       <Image style = {
         {
-          "width": 189,
+          "width": chartWidth/2.2,
           "height": 145,
           "borderWidth": 1,
           "borderColor": "rgba(229, 229, 229, 255)"
@@ -220,7 +220,7 @@ const SigongBest = () => {
           "paddingTop": 1,
           "marginStart": 10,
           "marginTop": 12,
-          "width": 190,
+          "width": chartWidth/2.2,
           "height": 268,
           "borderWidth": 1,
           "borderColor": "rgba(229, 229, 229, 255)",
@@ -229,7 +229,7 @@ const SigongBest = () => {
       } >
       <Image style = {
         {
-          "width": 189,
+          "width": chartWidth/2.2,
           "height": 145,
           "borderWidth": 1,
           "borderColor": "rgba(229, 229, 229, 255)"
@@ -294,7 +294,7 @@ const SigongBest = () => {
           "paddingTop": 1,
           "marginStart": 12,
           "marginTop": 13,
-          "width": 190,
+          "width": chartWidth/2.2,
           "height": 268,
           "borderWidth": 1,
           "borderColor": "rgba(229, 229, 229, 255)",
@@ -303,7 +303,7 @@ const SigongBest = () => {
       } >
       <Image style = {
         {
-          "width": 189,
+          "width": chartWidth/2.2,
           "height": 145,
           "borderWidth": 1,
           "borderColor": "rgba(229, 229, 229, 255)"

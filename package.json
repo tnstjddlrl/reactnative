@@ -10,7 +10,8 @@
     "lint": "eslint .",
     "clean:android": "cd android && ./gradlew clean && cd ../",
     "clean:two": "cd android && ./gradlew cleanBuildCache",
-    "clean:node": "rm -rf node_modules"
+    "clean:node": "rm -rf node_modules",
+    "ra":"npx react-native run-android"
   },
   "dependencies": {
     "@react-native-community/checkbox": "^0.5.6",

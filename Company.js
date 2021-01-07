@@ -59,7 +59,7 @@ const Company=(prop)=>{
   <View style = {
     {
       "alignItems": "flex-start",
-      "marginStart": 218,
+      "marginStart": 200,
       "marginTop": 12
     }
   } >
@@ -147,7 +147,7 @@ const Company=(prop)=>{
       "marginStart": 250,
       "marginTop": 34
     }
-  } >  {prop.star}</Text>
+  } >{prop.star}</Text>
   </View>
   </View>
   </View>
