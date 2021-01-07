@@ -22,7 +22,8 @@ import { createStackNavigator } from '@react-navigation/stack';
 import { createDrawerNavigator } from '@react-navigation/drawer';
 import CheckBox from '@react-native-community/checkbox';
 
-import Phptest from './mysqltest.js'
+import FootTer from './footer.js'
+import HeadHeder from "./header.js";
 
 import SigongBest from './Component2.js'
 import REquset from './Requset.js'
@@ -35,11 +36,11 @@ import styles from './styles.js'
 import Mmenu from './Mmenu.js'
 import REview from './Review.js'
 import Register from './register.js'
-import FootTer from './footer.js'
-import HeadHeder from "./header.js";
+
 import ComLook from './comlook.js'
 import Company from './Company.js'
 import EEvent from './eevent.js'
+import NaviMenu from "./NavigateD.js";
 
 
 const Stack = createStackNavigator();
@@ -48,12 +49,10 @@ const Drawer = createDrawerNavigator();
 const chartHeight = Dimensions.get('window').height;
 const chartWidth = Dimensions.get('window').width;
 
-let shown = false; //modal 메뉴를 위해 생성. 하지만 구상이 잘안됨.
 
 const App =({ navigation }) =>{
   const logo = { uri: "https://pluslink.kr/img/pluslink/logo.png" };
   const logo2 = { uri: "https://pluslink.kr/img/menu.png" };
-
 
   return(
     <View>
@@ -71,17 +70,17 @@ const App =({ navigation }) =>{
 
        
         <EEvent></EEvent>
-        <View style={{}}>
+        <View>
         <SigongBest></SigongBest>
         </View>
         <REview></REview>
 
         </ScrollView>
       </View>
-
+      
       <HeadHeder></HeadHeder>
+     
       <FootTer></FootTer>
-
         
     </View>
   )
@@ -112,7 +111,7 @@ const Eimg3 =require('./img/e_banner03.jpg')
 function App2() {
   return (
     <NavigationContainer>
-      <Stack.Navigator headerMode={"none"}>
+      <Stack.Navigator headerMode={"none"} mode='modal'>
         <Stack.Screen 
           name="홈"
           component={App}
@@ -143,10 +142,26 @@ function App2() {
         <Stack.Screen 
           name="푸터"
           component={FootTer} />
+        <Stack.Screen 
+          name="네비"
+          component={DrawerNavigator} />
       </Stack.Navigator>
     </NavigationContainer>
   );
 }
+
+const DrawerNavigator = () => {
+  return (
+      <Drawer.Navigator>
+          <Drawer.Screen name="My Porfolio" component={Login} />
+          <Drawer.Screen name="Account" component={Login} />
+          <Drawer.Screen name="NBA" component = {Register} />
+          <Drawer.Screen name="NFL" component = {EventToPage} />
+      </Drawer.Navigator>
+  );
+};
+
+
 //----------------------------------------------------------
 
 
