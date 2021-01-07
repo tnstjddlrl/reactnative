@@ -48,7 +48,7 @@ const Drawer = createDrawerNavigator();
 const chartHeight = Dimensions.get('window').height;
 const chartWidth = Dimensions.get('window').width;
 
-let shown = false;
+let shown = false; //modal 메뉴를 위해 생성. 하지만 구상이 잘안됨.
 
 const App =({ navigation }) =>{
   const logo = { uri: "https://pluslink.kr/img/pluslink/logo.png" };
