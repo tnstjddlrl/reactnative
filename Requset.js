@@ -35,8 +35,11 @@ const REquset = () => {
     const [value, onChangeText] = React.useState('');//textinput용
     const [text, setText] = useState("기본주소");
     const [show, setShow] = React.useState(false);//modal용
+    const [item, setItem] =useState("카테고리를 선택해주세요.");
+    const [listItem,setListItem] = useState(basicitems);
 
     const items = [
+      { label: '카테고리를 선택해주세요.', value: '카테고리를 선택해주세요.' },
       { label: '전기&조명', value: '전기&조명' },
       { label: '수도', value: '수도' },
       { label: '도배&장판', value: '도배&장판' },
@@ -46,7 +49,45 @@ const REquset = () => {
       { label: '보일러&배관', value: '보일러&배관' },
       { label: '건물외부', value: '건물외부' },
     ];
+    const basicitems = [
+      { label: '먼저 카테고리를 선택해주세요.', value: '먼저 카테고리를 선택해주세요.' }
+    ];
+    const elecItems =[
+      { label: 'cctv', value: 'cctv' },
+      { label: '계전', value: '계전' },
+      { label: '소방공사', value: '소방공사' },
+      { label: '에어컨', value: '에어컨' },
+      { label: '음향', value: '음향'},
+      { label: '인터폰 및 도어폰', value: '인터폰 및 도어폰' },
+      { label: '전기', value: '전기' },
+      { label: '조명', value: '조명' },
+      { label: '통신설비', value: '통신설비' }
+    ]
+    const waterItems =[
+      { label: '결로', value: '결로' },
+      { label: '누수', value: '누수' },
+      { label: '동파', value: '동파' },
+      { label: '방수공사', value: '방수공사' },
+      { label: '상하수도', value: '상하수도'},
+      { label: '소모품 교체', value: '소모품 교체' },
+      { label: '악취제거', value: '악취제거' }
+    ]
 
+    useState(()=>{
+      switch(item){
+        case "카테고리를 선택해주세요.":
+          setListItem(basicitems);
+          break;
+        case "전기&조명":
+          setListItem(elecItems);
+          break;
+        case "수도":
+          setListItem(waterItems);
+          break;
+      }
+    },[item])
+
+    
   return (
     <SafeAreaView>
    
@@ -97,7 +138,7 @@ const REquset = () => {
     <ListPicker
     items={items}
     style={{width:350}}
-    onChange={(item) => console.log(item)}
+    onChange={(item) => setItem(item)}
   />
     <Text style = {
       {
@@ -109,19 +150,11 @@ const REquset = () => {
         "marginTop": 9
       }
     } >세부항목 </Text>
-    <View style = {
-      {
-        "alignItems": "flex-start",
-        "marginStart": 16,
-        "marginTop": 9,
-        "width": 381,
-        "height": 38,
-        "borderWidth": 1,
-        "borderColor": "rgba(171, 171, 171, 255)",
-        "backgroundColor": "rgba(255, 255, 255, 255)"
-      }
-    }
-    />
+    <ListPicker
+    items={listItem}
+    style={{width:350}}
+    onChange={(item) => console.log(item)}
+  />
     <Text style = {
       {
         "fontFamily": "Segoe UI",
