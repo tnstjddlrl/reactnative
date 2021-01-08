@@ -20,6 +20,7 @@ import { useIsDrawerOpen } from '@react-navigation/drawer';
 import { NavigationContainer } from '@react-navigation/native';
 import { createStackNavigator } from '@react-navigation/stack';
 import { createDrawerNavigator } from '@react-navigation/drawer';
+import { useNavigation } from '@react-navigation/native';
 import CheckBox from '@react-native-community/checkbox';
 
 import FootTer from './footer.js'
@@ -41,6 +42,7 @@ import ComLook from './comlook.js'
 import Company from './Company.js'
 import EEvent from './eevent.js'
 import NaviMenu from "./NavigateD.js";
+import Mypage from "./mypage"
 
 
 const Stack = createStackNavigator();
@@ -55,10 +57,10 @@ function isshwon(params) {
 }
 
 
-const App =({ navigation }) =>{
+const App =({  }) =>{
   const logo = { uri: "https://pluslink.kr/img/pluslink/logo.png" };
   const logo2 = { uri: "https://pluslink.kr/img/menu.png" };
-    
+  const navigation = useNavigation();
   return(
     <View>
       <View>
@@ -159,15 +161,18 @@ const Eimg3 =require('./img/e_banner03.jpg')
 // }
 
 const DrawerNavigator = () => {
+  const [islogin,setLogin] = useState(false);
   return (
     <NavigationContainer>
       <Drawer.Navigator>
           <Drawer.Screen name="홈" component={App} />
-          <Drawer.Screen name="로그인" component={Login} />
+          {
+            islogin ? <Drawer.Screen name="마이페이지" component={Mypage} /> : <Drawer.Screen name="로그인" component={Login} />
+          }
           <Drawer.Screen name="회원가입" component = {Register} />
-          <Drawer.Screen name="회사자세히보기" component = {ComLook} />
+          {/* <Drawer.Screen name="회사자세히보기" component = {ComLook} />
           <Drawer.Screen name="화사테스트" component = {Company} />
-          <Drawer.Screen name="이벤트자세히보기" component = {EventToPage} />
+          <Drawer.Screen name="이벤트자세히보기" component = {EventToPage} /> */}
           <Drawer.Screen name="견적의뢰" component = {REquset} />
           <Drawer.Screen name="견적현황" component = {CurGyeon} />
           {/* <Drawer.Screen name="푸터" component = {FootTer} />
