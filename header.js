@@ -12,6 +12,7 @@ import styles from './styles.js'
 import { useNavigation } from '@react-navigation/native';
 import { DrawerActions } from '@react-navigation/native';
 
+
 const logo = { uri: "https://pluslink.kr/img/pluslink/logo.png" };
 const logo2 = { uri: "https://pluslink.kr/img/menu.png" };
 const testlogo = require('./img/logo.png')
@@ -21,10 +22,10 @@ const HeadHeder = () => {
   return (
     <View style={{flex:1}}>
         <View style={{borderWidth:1,position:'absolute',width:chartWidth+15,left:-2,bottom:(chartHeight/1.08),height:60,flexDirection: 'row',backgroundColor:'white'}}>
-            <TouchableOpacity activeOpacity={0.5} onPress={() => navigation.navigate('네비')} style={{top:10,left:10}}>
+            <TouchableOpacity activeOpacity={0.5} onPress={() => {navigation.dispatch(DrawerActions.openDrawer());}} style={{top:10,left:10}}>
                 <Image
-                source={logo2}
-                style={{width:40,height:35}}
+                  source={logo2}
+                  style={{width:40,height:35}}
                 />
             </TouchableOpacity>
             <View style={{left:chartWidth/3,height:30,width:40}}>

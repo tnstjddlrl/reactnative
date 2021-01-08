@@ -15,7 +15,7 @@ import {
   Button,
   TextInput,
 } from "react-native";
-
+import { useIsDrawerOpen } from '@react-navigation/drawer';
 
 import { NavigationContainer } from '@react-navigation/native';
 import { createStackNavigator } from '@react-navigation/stack';
@@ -49,11 +49,16 @@ const Drawer = createDrawerNavigator();
 const chartHeight = Dimensions.get('window').height;
 const chartWidth = Dimensions.get('window').width;
 
+function isshwon(params) {
+  const [shown,setShown] = useState(false);
+  setShown(params)
+}
+
 
 const App =({ navigation }) =>{
   const logo = { uri: "https://pluslink.kr/img/pluslink/logo.png" };
   const logo2 = { uri: "https://pluslink.kr/img/menu.png" };
-
+    
   return(
     <View>
       <View>
@@ -108,56 +113,67 @@ const Eimg3 =require('./img/e_banner03.jpg')
 
 
 //------------------------------------------------------------
-function App2() {
-  return (
-    <NavigationContainer>
-      <Stack.Navigator headerMode={"none"} mode='modal'>
-        <Stack.Screen 
-          name="홈"
-          component={App}
-           />
-        <Stack.Screen 
-          name="로그인"
-          component={Login}
-           />
-           <Stack.Screen 
-          name="회원가입"
-          component={Register}
-           />
-        <Stack.Screen 
-          name="회사자세히보기"
-          component={ComLook} />
-        <Stack.Screen 
-          name="회사테스트"
-          component={Company} />
-        <Stack.Screen 
-          name="이벤트자세히보기"
-          component={EventToPage} />
-        <Stack.Screen 
-          name="견적의뢰"
-          component={REquset} />
-        <Stack.Screen 
-          name="견적현황"
-          component={CurGyeon} />
-        <Stack.Screen 
-          name="푸터"
-          component={FootTer} />
-        <Stack.Screen 
-          name="네비"
-          component={DrawerNavigator} />
-      </Stack.Navigator>
-    </NavigationContainer>
-  );
-}
+// function App2() {
+  
+//   return (
+//     <NavigationContainer>
+//       <Stack.Navigator headerMode={"none"} mode='modal'>
+//         <Stack.Screen 
+//           name="홈"
+//           component={App}
+//            />
+//         <Stack.Screen 
+//           name="로그인"
+//           component={Login}
+//            />
+//            <Stack.Screen 
+//           name="회원가입"
+//           component={Register}
+//            />
+//         <Stack.Screen 
+//           name="회사자세히보기"
+//           component={ComLook} />
+//         <Stack.Screen 
+//           name="회사테스트"
+//           component={Company} />
+//         <Stack.Screen 
+//           name="이벤트자세히보기"
+//           component={EventToPage} />
+//         <Stack.Screen 
+//           name="견적의뢰"
+//           component={REquset} />
+//         <Stack.Screen 
+//           name="견적현황"
+//           component={CurGyeon} />
+//         <Stack.Screen 
+//           name="푸터"
+//           component={FootTer} />
+//           <Stack.Screen 
+//           name="헤더"
+//           component={HeadHeder} />
+//           <Stack.Screen name="네비" component={DrawerNavigator}></Stack.Screen>
+          
+//       </Stack.Navigator>
+//     </NavigationContainer>
+//   );
+// }
 
 const DrawerNavigator = () => {
   return (
+    <NavigationContainer>
       <Drawer.Navigator>
-          <Drawer.Screen name="My Porfolio" component={Login} />
-          <Drawer.Screen name="Account" component={Login} />
-          <Drawer.Screen name="NBA" component = {Register} />
-          <Drawer.Screen name="NFL" component = {EventToPage} />
+          <Drawer.Screen name="홈" component={App} />
+          <Drawer.Screen name="로그인" component={Login} />
+          <Drawer.Screen name="회원가입" component = {Register} />
+          <Drawer.Screen name="회사자세히보기" component = {ComLook} />
+          <Drawer.Screen name="화사테스트" component = {Company} />
+          <Drawer.Screen name="이벤트자세히보기" component = {EventToPage} />
+          <Drawer.Screen name="견적의뢰" component = {REquset} />
+          <Drawer.Screen name="견적현황" component = {CurGyeon} />
+          {/* <Drawer.Screen name="푸터" component = {FootTer} />
+          <Drawer.Screen name="헤더" component = {HeadHeder} /> */}
       </Drawer.Navigator>
+      </NavigationContainer>
   );
 };
 
@@ -166,4 +182,4 @@ const DrawerNavigator = () => {
 
 
 
-export default App2;//App2
+export default DrawerNavigator;//App2
