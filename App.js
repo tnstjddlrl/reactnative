@@ -177,9 +177,9 @@ const DrawerNavigator = () => {
           <Drawer.Screen name="견적의뢰" component = {REquset} />
           <Drawer.Screen name="견적현황" component = {CurGyeon} />
           {/* <Drawer.Screen name="화사테스트" component = {Company} /> */}
-          <Drawer.Screen name="회사자세히보기"  name="     " component = {ComLook} />
-          <Drawer.Screen name="이벤트자세히보기" name=" " component = {EventToPage} />
-          
+          <Drawer.Screen name="회사자세히보기" component = {ComLook} options={{drawerLabel:''}} />
+          <Drawer.Screen name="이벤트자세히보기"  component = {EventToPage} options={{drawerLabel:''}} />
+          <Drawer.Screen name="마이페이지"   component={Mypage} options={{drawerLabel:''}} />
           {/* <Drawer.Screen name="푸터" component = {FootTer} />
           <Drawer.Screen name="헤더" component = {HeadHeder} /> */}
       </Drawer.Navigator>

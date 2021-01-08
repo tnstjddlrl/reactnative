@@ -39,7 +39,7 @@ const FootTer = () => {
           </ImageBackground>
         </View>
         </TouchableOpacity>
-        <TouchableOpacity >
+        <TouchableOpacity onPress={() => navigation.navigate('마이페이지')}>
         <View style={{backgroundColor:'white'}}>
           <ImageBackground source={ffimg4} style={{width:65,height:65,marginLeft:20,marginRight:40}}>
           </ImageBackground>
