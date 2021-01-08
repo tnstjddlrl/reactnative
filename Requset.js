@@ -34,7 +34,11 @@ const chartWidth = Dimensions.get('window').width;
 const REquset = () => {
     const [value, onChangeText] = React.useState('');//textinput용
     const [text, setText] = useState("기본주소");
+    const [date,setDate] = useState("날짜를 입력해주세요");
+
     const [show, setShow] = React.useState(false);//modal용
+    const [calShow,setCalShow] = useState(false);
+
     const [item, setItem] =useState("카테고리를 선택해주세요.");
     const [listItem,setListItem] = useState([]);
 
@@ -204,6 +208,21 @@ const REquset = () => {
         "marginTop": 17
       }
     } >방문날짜 </Text>
+    <TouchableOpacity onPress={()=>setCalShow(true)}>
+     <View style = {
+      {
+        "alignItems": "flex-start",
+        "marginStart": 15,
+        "marginTop": 10,
+        "width": 325,
+        "height": 37,
+        "borderWidth": 1,
+        "borderColor": "rgba(171, 171, 171, 255)",
+        "backgroundColor": "rgba(255, 255, 255, 255)"
+      }
+    }
+    ><Text>{date}</Text></View>
+    </TouchableOpacity>
     <Text style = {
       {
         "fontFamily": "Segoe UI",
