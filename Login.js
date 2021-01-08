@@ -1,17 +1,8 @@
 import React,{useState,Component,useEffect} from "react";
 import {
-  SafeAreaView,
-  ScrollView,
   Text,
-  StyleSheet,
   View,
-  ImageBackground,
-  Animated,
-  useWindowDimensions,
-  AppRegistry,
   Dimensions,
-  Image,
-  TouchableOpacity,
   Button,
   TextInput,
 } from "react-native";

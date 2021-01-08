@@ -16,16 +16,7 @@ import {LocaleConfig} from 'react-native-calendars';
 import { TouchableOpacity } from "react-native-gesture-handler";
 
 import {
-  DateRangePicker,
-  DatePicker,
-  TimePicker,
-  DateTimePicker,
   ListPicker,
-  NumberPicker,
-  CookingAmountPicker,
-  StatePicker,
-  StatePickerSmall,
-  TextField,
 } from 'react-native-ultimate-modal-picker';
 
 const event = require('./img/eventBg.jpg')
