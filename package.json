@@ -11,7 +11,7 @@
     "clean:android": "cd android && ./gradlew clean && cd ../",
     "clean:two": "cd android && ./gradlew cleanBuildCache",
     "clean:node": "rm -rf node_modules",
-    "ra":"npx react-native run-android"
+    "ra": "npx react-native run-android"
   },
   "dependencies": {
     "@react-native-community/checkbox": "^0.5.6",
@@ -25,6 +25,7 @@
     "express": "^4.17.1",
     "react": "16.13.1",
     "react-native": "0.63.4",
+    "react-native-calendars": "^1.1129.0",
     "react-native-daum-postcode": "^1.0.9",
     "react-native-gesture-handler": "^1.9.0",
     "react-native-reanimated": "^1.13.2",

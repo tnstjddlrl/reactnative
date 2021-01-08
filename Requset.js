@@ -11,6 +11,8 @@ import {
   SafeAreaView 
 } from 'react-native';
 import Postcode from 'react-native-daum-postcode';
+import {Calendar, CalendarList, Agenda} from 'react-native-calendars';
+import {LocaleConfig} from 'react-native-calendars';
 import { TouchableOpacity } from "react-native-gesture-handler";
 
 import {
@@ -30,6 +32,15 @@ const event = require('./img/eventBg.jpg')
 
 const chartHeight = Dimensions.get('window').height;
 const chartWidth = Dimensions.get('window').width;
+
+LocaleConfig.locales['fr'] = {
+  monthNames: ['Janvier','Février','Mars','Avril','Mai','Juin','Juillet','Août','Septembre','Octobre','Novembre','Décembre'],
+  monthNamesShort: ['Janv.','Févr.','Mars','Avril','Mai','Juin','Juil.','Août','Sept.','Oct.','Nov.','Déc.'],
+  dayNames: ['일요일','월요일', '화요일','수요일','목요일','금요일','토요일'],
+  dayNamesShort: ['일', '월','화','수','목','금','토'],
+  today: 'Aujourd\'hui'
+};
+LocaleConfig.defaultLocale = 'fr';
 
 const REquset = () => {
     const [value, onChangeText] = React.useState('');//textinput용
@@ -248,7 +259,7 @@ const REquset = () => {
         "alignItems": "flex-start",
         "marginStart": 17,
         "marginTop": 8,
-        "width": 380,
+        "width": chartWidth/1.1,
         "height": 120,
         "borderWidth": 1,
         "borderColor": "rgba(161, 161, 161, 255)",
@@ -287,7 +298,7 @@ const REquset = () => {
         "paddingTop": 6,
         "marginStart": 17,
         "marginTop": -35,
-        "width": 380,
+        "width":  chartWidth/1.1,
         "height": 35,
         "borderWidth": 1,
         "borderColor": "rgba(112, 112, 112, 255)",
@@ -416,6 +427,25 @@ const REquset = () => {
       onSelected={(data) => {setText(JSON.stringify(data.address)),setShow(false)}}
   />
 </View>
+</Modal>
+
+<Modal transparent={true} visible={calShow}>
+<View style={{ height:chartHeight/2,top:chartHeight/2.5 }}>
+        <Calendar
+        onDayPress={(day) => {console.log('selected day', day),setCalShow(false),setDate(day.dateString)}}
+        onDayLongPress={(day) => {console.log('selected day', day)}}
+        monthFormat={'yyyy MM'}
+        onMonthChange={(month) => {console.log('month changed', month)}}
+        hideExtraDays={false}
+        disableMonthChange={true}
+        firstDay={1}
+        hideDayNames={false}
+        showWeekNumbers={false}
+        onPressArrowLeft={substractMonth => substractMonth()}
+        onPressArrowRight={addMonth => addMonth()}
+        disableAllTouchEventsForDisabledDays={true}
+        />
+      </View>
 </Modal>
 
 </SafeAreaView>
