@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState,useEffect } from "react";
 import key from "./key";
 import {
   View,
@@ -36,7 +36,7 @@ const REquset = () => {
     const [text, setText] = useState("기본주소");
     const [show, setShow] = React.useState(false);//modal용
     const [item, setItem] =useState("카테고리를 선택해주세요.");
-    const [listItem,setListItem] = useState(basicitems);
+    const [listItem,setListItem] = useState([]);
 
     const items = [
       { label: '카테고리를 선택해주세요.', value: '카테고리를 선택해주세요.' },
@@ -73,19 +73,21 @@ const REquset = () => {
       { label: '악취제거', value: '악취제거' }
     ]
 
-    useState(()=>{
+    const resetList =()=>{
+      console.log('함수실행')
       switch(item){
-        case "카테고리를 선택해주세요.":
-          setListItem(basicitems);
-          break;
         case "전기&조명":
+          console.log('전기조명선택됨')
           setListItem(elecItems);
           break;
         case "수도":
           setListItem(waterItems);
           break;
+        default :
+          setListItem(basicitems);
+          break;
       }
-    },[item])
+    }
 
     
   return (
@@ -138,7 +140,7 @@ const REquset = () => {
     <ListPicker
     items={items}
     style={{width:350}}
-    onChange={(item) => setItem(item)}
+    onChange={(item) => {resetList(),setItem(item)}}
   />
     <Text style = {
       {
