@@ -77,7 +77,6 @@ const REquset = () => {
       console.log('함수실행')
       switch(item){
         case "전기&조명":
-          console.log('전기조명선택됨')
           setListItem(elecItems);
           break;
         case "수도":
