@@ -12,7 +12,6 @@ import FootTer from './footer.js'
 import HeadHeder from "./header.js";
 import { useNavigation } from '@react-navigation/native';
 import Axios from 'axios'
-import setLogin from './App'
 
 const logo = { uri: "https://pluslink.kr/img/pluslink/logo.png" };
 const logo2 = { uri: "https://pluslink.kr/img/menu.png" };
@@ -24,7 +23,6 @@ const chartWidth = Dimensions.get('window').width;
 //로그인 연동 해야함...
 //================================로그인===============================
 function logindata(id,pss){
-  const navigation = useNavigation();
   Axios.post('http://ip0131.cafe24.com/pluslink/json/memberJson.php', JSON.stringify({
     id : id,
     password : pss
@@ -33,7 +31,7 @@ function logindata(id,pss){
     console.log('리스폰스 ',response);
     if(response.request._response=='suc'){
     alert('로그인 되었습니다.')
-    setLogin(true);
+    setLogin(true); //로그인 처리가 안됨. 이부분 수정해야함.
     }
     else{
       alert('아이디 또는 비밀번호를 확인해주세요')
