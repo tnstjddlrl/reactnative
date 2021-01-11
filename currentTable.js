@@ -24,12 +24,14 @@ const CurrentTable =() =>{
     return(
         <View>
             <View style={{width:chartWidth,height:chartHeight}}>
-                <ScrollView >
+                <ScrollView>
                     <View style={{width:chartWidth,marginTop:50}}>
                     <ImageBackground source={event} style={{width:chartWidth,height:chartHeight/7}}>
                     </ImageBackground>
                     <Text style={{position:'absolute',color:"white",fontSize:20,fontWeight:'bold',top:40,left:10}}>견적현황</Text>
                     </View>
+
+                    
 
 
 
