@@ -22,10 +22,10 @@ import HeadHeder from "./header.js";
 import { ScrollView } from 'react-native-gesture-handler';
 import { useState } from 'react/cjs/react.development';
 
-const CurrentTable =() =>{
+const CurrentTable =({route}) =>{
     const navigation = useNavigation();
     const [select, setSelect] = useState(false)
-    const [listCate,SetlistCate] = useState('전체')
+    const [listCate,SetlistCate] = useState(route.params.name)
 
     return(
         <View>
@@ -52,6 +52,8 @@ const CurrentTable =() =>{
                         </TouchableOpacity>
                     </View>
 
+
+                    
 
 
 
